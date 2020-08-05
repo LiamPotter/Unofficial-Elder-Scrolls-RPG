@@ -1,0 +1,79 @@
+/*Configure the tab buttons*/
+.sheet-character,
+.sheet-config,
+.sheet-journal {
+	display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="configuration"] ~ div.sheet-config,
+.sheet-tabstoggle[value="journal"] ~ div.sheet-journal {
+	display: block;
+}
+
+.sheet-underheading
+{
+    color:black;
+    vertical-align: bottom;
+    text-align: right;
+    margin-bottom:-100px;
+}
+
+img {
+  max-height: 200px;
+}
+
+.sheet-stat-column{
+    font-size:10px;
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sheet-stat-column-noncase{
+    font-size:10px;
+    color:black;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.sheet-stat-lucknums{
+    width=50px;
+     box-sizing:border-box
+}
+
+.sheet-stat-box{
+    font-size:18px;
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width:50px;
+    height:50px;
+    box-sizing:border-box
+}
+
+.sheet-luck-box{
+     font-size:15px;
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width:35px;
+    height:35px;
+    box-sizing:border-box
+}
+
+.sheet-checkbox{
+    color:black;
+     width:50px;
+         height:50px;
+}
+
+.sheet-columns {
+  display: flex;
+  justify-content: space-between;
+}
