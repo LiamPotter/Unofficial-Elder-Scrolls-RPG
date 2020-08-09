@@ -12,25 +12,65 @@
 	display: block;
 }
 
+input.sheet-hpmodtoggle:not([value='on']) ~ div .sheet-hpmoddiv {
+    height:0px
+}
+
+input.sheet-hpmodtoggle:not([value='0']) ~ div .sheet-hpmoddiv {
+    height:15px
+}
+
+
+input.sheet-hpmodtoggle:not([value='on']) ~ div .sheet-hpmod {
+  display: none;
+}
+
+
+
+
 .sheet-underheading
 {
-    color:black;
-    vertical-align: bottom;
+    color:gray;
+    vertical-align: top;
     text-align: right;
-    margin-bottom:-100px;
+    margin-bottom:-10px;
+    text-overflow:visible;
 }
 
 img {
-  max-height: 200px;
+  max-height: 100px;
 }
 
 .sheet-stat-column{
     font-size:10px;
     color:black;
-    font-weight: bold;
+    background:#ebebeb;
+    text-align: center;
+    border-color:white;
+    text-transform: uppercase;
+}
+
+.sheet-luck-column{
+font-size:10px;
+    color:black;
     text-align: center;
     text-transform: uppercase;
 }
+
+.sheet-full-border{
+      border:1px solid; 
+      box-sizing:border-box;
+      justify-content: bottom;
+}
+
+.sheet-bottom-border{
+      border-style:none none double none;
+      border-width: 1px 1px 3px 1px;
+      box-sizing:border-box;
+      display:flex;
+      justify-content: bottom;
+}
+
 
 .sheet-stat-column-noncase{
     font-size:10px;
@@ -46,14 +86,15 @@ img {
 }
 
 .sheet-stat-box{
-    font-size:18px;
+    font-size:15px;
     color:black;
-    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    vertical-align:center;
     width:50px;
     height:50px;
     box-sizing:border-box
+    padding-bottom:10px;
 }
 
 .sheet-luck-box{
@@ -62,9 +103,77 @@ img {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    padding-left:5px;
     width:35px;
     height:35px;
-    box-sizing:border-box
+    box-sizing:border-box;
+}
+
+.sheet-autocalc-box
+{
+    font-size:18px;
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    height:50px;
+    width:50px;
+    box-sizing:border-box;
+    background:#ebebeb;
+    border-style:none none none none; 
+    padding-top:5px;
+}
+
+.sheet-consume-stat-box
+{
+    vertical-align:top;
+    text-align: center;
+    box-sizing:border-box;
+    border-collapse:separate;
+    border-color:black;
+    border-style:solid solid solid solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 4px 4px 4px 4px;
+    background:white;
+    width:20%;
+    height:20px;
+    padding-left:2px;
+    padding-right:2px;
+   
+}
+
+.sheet-consume-stat-title{
+     font-size:10px;
+     vertical-align:bottom;
+     margin-bottom:0px;
+      margin-top:-5px;
+}
+
+.sheet-consume-stat-calc{
+    font-size:14px;
+    color:black;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    height:50px;
+    width:50px;
+    box-sizing:border-box;
+    background:#ebebeb;
+    border-style:none none none none; 
+    margin-top:-10px;
+}
+
+.sheet-mini-button{
+    height:15px;
+    width:15px;
+    box-sizing:border-box;
+    text-align: center;
+    vertical-align:top;
+    padding:0px;
+    align-self: top;
+    justify-content: top;
+    margin:0px;
+    position:absolute;
 }
 
 .sheet-checkbox{
