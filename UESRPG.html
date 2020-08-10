@@ -158,53 +158,19 @@
                 <input type="number" class = "sheet-autocalc-box" style="padding-left:18px;height:35px; font-size:20px;" name="attr_luckmod" value="floor(@{luck}/10)" disabled="true"/>
               </td>
               <td><p></p></td>
-            </tr>
-           
-        </table>
+            </tr> 
+    </table>
     
-    <table style="vertical-align: top; margin-top:-80px;margin-top:2px;margin-left:0px;width:99%">
-            
-             <td class="sheet-stat-column-noncase"style="text-align:right;">Lucky #s</td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_luck1" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_luck2" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_luck3" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_luck4" class = "sheet-luck-box" value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_luck5" class = "sheet-luck-box"value = ->
-            </td>
-              <td class="sheet-stat-column-noncase"style="text-align:right;">Unlucky #s</td>
-                <td class="sheet-luck-column">
-                <input type="text" name="attr_unluck1" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_unluck2" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_unluck3" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_unluck4" class = "sheet-luck-box"value = ->
-            </td>
-             <td class="sheet-luck-column">
-                <input type="text" name="attr_unluck5" class = "sheet-luck-box"value = ->
-            </td>
-           
-        </table>
+    
         
     <input type="hidden" class="sheet-hpmodtoggle" name="attr_hpmodtoggle" />
-    
-    <div style = " background:#ebebeb;padding:5px;margin-top:5px">
-        <table style="width:100%">
-            <td style="width:24%">
-                <table class = "sheet-consume-stat-box"style="padding-top:5px; width:50%">
+    <input type="hidden" class="sheet-spmodtoggle" name="attr_spmodtoggle" />
+    <input type="hidden" class="sheet-mpmodtoggle" name="attr_mpmodtoggle" />
+
+    <div style = " background:#ebebeb;padding:5px;margin-top:5px;margin-left:5px">
+        <table>
+            <td style="padding-right:5px;vertical-align:top">
+                <table class = "sheet-consume-stat-box"style="padding-top:5px; width:100%">
                     <tr style="height:5px;">
                         <td colspan = "2" style ="border-style: none none solid none;border-width:1px;">
                             <p style = "font-weight:bold;font-size:15px;margin-top:-5px;margin-bottom:0px;text-align:center;vertical-align:top;">Hit Points</p>
@@ -217,7 +183,7 @@
                          name="attr_maxhp" value="@{endurance}/2+@{hpmod}" disabled="true" >
                         
                         <div class="sheet-hpmoddiv">
-                            <input type="checkbox" name="attr_hpmodtoggle"style="margin-left:-75px;margin-top:-135px;padding:0px;">
+                            <input type="checkbox" name="attr_hpmodtoggle"style="margin-left:-70px;margin-top:-135px;padding:0px;">
                             <div class="sheet-hpmod"style="margin-top:-20px;">
                                <span style = "font-size:12px; vertical-align:top">Mod</span>
                                     <input type="number" class = "sheet-consume-stat-calc" 
@@ -229,7 +195,7 @@
                         
                     </td>
                     <td>
-                         <p style = "font-weight:bold;font-size:15px;padding-top:0px;text-align:center;vertical-align:top;">Current</p>
+                         <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Current</p>
                          <input type="number" class = "sheet-consume-stat-calc" 
                          style="font-size:15px;width:100%;padding-left:20px;margin-top:-10px;font-weight:normal;background:white;text-align:center;
                          border-style: none none none none;height:20px;"
@@ -246,20 +212,234 @@
                          </div>
                         
                     </td>
-                </table>
-            </td>
-            <td style="width:24%">
-              </td>
-            </table>
+            </table></td>
+            <td style="padding-right:2.5px;vertical-align:top">
+                <table class = "sheet-consume-stat-box"style="padding-top:5px; width:100%">
+                    <tr style="height:5px;">
+                        <td colspan = "2" style ="border-style: none none solid none;border-width:1px;">
+                            <p style = "font-weight:bold;font-size:15px;margin-top:-5px;margin-bottom:0px;text-align:center;vertical-align:top;">Stamina Points</p>
+                        </td>
+                    </tr>
+                    <td style ="border-style: none solid none none;border-width:1px;height:2px;">
+                        <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Max</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="width:100%;background:white;text-align: center;font-size:15px;font-weight:normal;padding-left:20px;"
+                         name="attr_maxsp" value="@{endmod}+@{spmod}" disabled="true" >
+                        
+                        <div class="sheet-spmoddiv">
+                            <input type="checkbox" name="attr_spmodtoggle"style="margin-left:-70px;margin-top:-135px;padding:0px;">
+                            <div class="sheet-spmod"style="margin-top:-20px;">
+                               <span style = "font-size:12px; vertical-align:top">Mod</span>
+                                    <input type="number" class = "sheet-consume-stat-calc" 
+                                    style="font-size:12px;width:48%;margin-top:-5px;font-weight:normal;background:white;text-align:center;
+                                    border-style: none none none none;height:20px; margin-right:15px"
+                                    name="attr_spmod" value="0" >
+                            </div>
+                       </div>
+                        
+                    </td>
+                    <td style ="vertical-align:top;">
+                         <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Current</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="font-size:15px;width:100%;padding-left:20px;margin-top:-10px;font-weight:normal;background:white;text-align:center;
+                         border-style: none none none none;height:20px;"
+                         name="attr_currentsp" value="0">                        
+                    </td>
+            </table></td>
+             <td style="padding-left:2.5px;vertical-align:top">
+                <table class = "sheet-consume-stat-box"style="padding-top:5px; width:100%">
+                    <tr style="height:5px;">
+                        <td colspan = "2" style ="border-style: none none solid none;border-width:1px;">
+                            <p style = "font-weight:bold;font-size:15px;margin-top:-5px;margin-bottom:0px;text-align:center;vertical-align:top;">Magicka Points</p>
+                        </td>
+                    </tr>
+                    <td style ="border-style: none solid none none;border-width:1px;height:2px;vertical-align:top;">
+                        <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Max</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="width:100%;background:white;text-align: center;font-size:15px;font-weight:normal;padding-left:20px;"
+                         name="attr_maxmp" value="@{intelligence}*@{mpmod}" disabled="true" >
+                        
+                        <div class="sheet-mpmoddiv">
+                            <input type="checkbox" name="attr_mpmodtoggle"style="margin-left:-70px;margin-top:-135px;padding:0px;">
+                            <div class="sheet-mpmod"style="margin-top:-20px;">
+                               <span style = "font-size:12px; vertical-align:top">Mod</span>
+                                    <input type="number" class = "sheet-consume-stat-calc" 
+                                    style="font-size:12px;width:48%;margin-top:-5px;font-weight:normal;background:white;text-align:center;
+                                    border-style: none none none none;height:20px; margin-right:15px"
+                                    name="attr_mpmod" value="1" >
+                            </div>
+                       </div>
+                        
+                    </td>
+                    <td style ="vertical-align:top;">
+                         <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Current</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="font-size:15px;width:100%;padding-left:20px;margin-top:-10px;font-weight:normal;background:white;text-align:center;
+                         border-style: none none none none;height:20px;"
+                         name="attr_currentmp" value="0" >                     
+                        
+                    </td>
+            </table></td>
+            <td style="padding-left:5px;vertical-align:top">
+                <table class = "sheet-consume-stat-box"style="padding-top:5px; width:100%">
+                    <tr style="height:5px;">
+                        <td colspan = "2" style ="border-style: none none solid none;border-width:1px;">
+                            <p style = "font-weight:bold;font-size:15px;margin-top:-5px;margin-bottom:0px;text-align:center;vertical-align:top;">Luck Points</p>
+                        </td>
+                    </tr>
+                    <td style ="border-style: none solid none none;border-width:1px;height:2px;">
+                        <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Max</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="width:100%;background:white;text-align: center;font-size:15px;font-weight:normal;padding-left:20px;"
+                         name="attr_maxlp" value="@{luckmod}" disabled="true" >                                                           
+                    </td>
+                    <td>
+                         <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Current</p>
+                         <input type="number" class = "sheet-consume-stat-calc" 
+                         style="font-size:15px;width:100%;padding-left:20px;margin-top:-10px;font-weight:normal;background:white;text-align:center;
+                         border-style: none none none none;height:20px;"
+                         name="attr_currentlp" value="0" >                       
+                    </td>
+            </table></td>
+        </table>
     </div>
-    <div style="margin-top:8px;margin-bottom:5px;float:right;background:white;padding-right:25px;">
-        <button type="action" name="act_character" >Character</button>
-        <button type="action" name="act_journal" >Combat</button>
-        <button type="action" name="act_configuration" >Spells</button>
+    <div class ="sheet-halfhalf">
+        <div class = "sheet-luck-grid"style='padding-bottom:12px;padding-top:3px'>
+            <div style = " grid-column: 1 / span 1;vertical-align:bottom;text-align:right;padding-top:8px;padding-right:5px;">
+                Lucky #s
+            </div>
+            <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_luck1" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_luck2" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_luck3" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_luck4" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_luck5" class = "sheet-luck-box"value = ->
+            </div>
+            <div style = " grid-column: 1 / span 1; vertical-align:bottom;text-align:right;padding-top:8px;padding-right:5px;">
+                Unlucky #s
+            </div>
+            <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_unluck1" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_unluck2" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_unluck3" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_unluck4" class = "sheet-luck-box"value = ->
+            </div>
+             <div style = " grid-column: 1 / span 1;">
+                <input type="text" name="attr_unluck5" class = "sheet-luck-box"value = ->
+            </div>
+        </div>
+        <div class = 'sheet-active-stat-grid'style='padding-bottom:12px;padding-top:3px'>
+            <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character' />
+            <input type="hidden" class="sheet-speedmodtoggle" name="attr_speedmodtoggle" />
+            <input type="hidden" class="sheet-initmodtoggle" name="attr_initmodtoggle" />
+            <div class = 'sheet-active-stat-box1'>
+                <input type="number" 
+                style="width:100%;height:40px;background:white;text-align: center;font-size:15px;font-weight:bold;padding-left:20px;border-style:none;"
+                name="attr_speed" value="@{strmod}+@{agimod}*2+@{speedmod}" disabled="true" >
+                <div class="sheet-speedmoddiv">
+                    <input type="checkbox" name="attr_speedmodtoggle"style="margin-left:-80%;margin-top:-80px;padding:0px;">
+                    <div class="sheet-speedmod"style="margin-top:-20px;">
+                        <span style = "font-size:12px; vertical-align:top">Mod</span>
+                            <input type="number" class = "sheet-consume-stat-calc" 
+                            style="font-size:12px;margin-top:-2px;font-weight:normal;background:white;text-align:center;
+                            border-style: none none none none;height:20px;"
+                            name="attr_speedmod" value="1" >
+                    </div>
+                </div>
+                <span>Speed</span>
+            </div>
+            <div class = 'sheet-active-stat-box2'>
+                <input type="hidden" name="attr_init"/>
+                <input type="number" 
+                style="width:100%;height:40px;background:white;text-align: center;font-size:15px;font-weight:bold;padding-left:20px;border-style:none;"
+                name="attr_foo_init" value="@{init}" disabled="true" >
+               <div class="sheet-initmoddiv">
+                    <input type="checkbox" name="attr_initmodtoggle"style="margin-left:-80%;margin-top:-80px;padding:0px;">
+                    <div class="sheet-initmod"style="margin-top:-20px;">       
+                        <span style="font-size:10px;">N</span>
+                        <input type="radio" value=0 name="attr_initmodselect" style="padding:0px;margin:0px;" checked="true">
+                        <span style="font-size:10px;">I</span>
+                        <input type="radio" value=1 name="attr_initmodselect" style="padding:0px;margin:0px;">
+                        <span style="font-size:10px;">P</span>
+                        <input type="radio" value=2 name="attr_initmodselect" style="padding:0px;margin:0px;">
+                    </div>
+                </div>
+                <span>Initiative</span>
+            </div>
+            <div class = 'sheet-active-stat-box3'>
+                <input type="number" 
+                style="width:100%;height:40px;background:white;text-align: center;font-size:15px;font-weight:bold;padding-left:20px;border-style:none;"
+                name="attr_currentap" value=0>
+                <span>AP</span>
+            </div></div>
+        </div>
+        <div style="border-style:solid none none none;border-width:1px;height:10px;"></div>
     </div>
-   
-     
-    <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character' />
+    <div style="width:700px;padding-left:260px;padding-bottom:-5px;margin-top:-21px;background:clear;">
+        <button type="action" class="sheet-mid-button" name="act_character" >Character</button>
+        <button type="action" class="sheet-mid-button" name="act_journal" >Combat</button>
+        <button type="action" class="sheet-mid-button" name="act_configuration" >Spells</button>
+    </div>
+
+    <div class = "sheet-skills-grid">
+        <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
+            Skills
+        </div>
+            <div class = "sheet-skills-grid-rank"style = "font-weight:bold;">
+            Rank
+        </div>
+            <div class = "sheet-skills-grid-base"style = "font-weight:bold;">
+            Target
+        </div>
+        <div class = "sheet-skills-grid-name">Acrobatics</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_acro" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_acrotn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{acrotn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Alchemy</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_alch" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_alchtn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{alchtn}" disabled="true" ></div>
+    </div>
+
+ 
     <div class='sheet-character'>
    
     </div>
@@ -283,4 +463,67 @@
             });
         });
     });
+
+    on("change:initmodselect change:agility change:intelligence change:perception", function(eventInfo)
+    {
+        getAttrs(["initmodselect","agility","intelligence","perception"],function(values)
+        {
+            let select = parseInt(values.initmodselect);
+            let returnInit = 0;
+            if(select==0)
+            {
+                returnInit = Math.floor(values.agility/10)+Math.floor(values.intelligence/10)+Math.floor(values.perception/10);
+            }
+            if(select==1)
+            {
+                returnInit = Math.floor(values.intelligence/10)*3;
+            }
+            if(select==2)
+            {
+                returnInit = Math.floor(values.perception/10)*3;
+            }
+            setAttrs({
+               init:returnInit,
+            });
+        });
+    });
+
+    const stat=["strength","endurance","agility","intelligence","willpower","perception","personality","luck"];
+    const ranks=["acro","alch"];
+
+    ranks.forEach(function (rank)
+    {
+        on("change:"+rank, function()
+        {
+            let tempstat1="";
+            let tempstat2="";
+            switch(rank)
+            {
+                case "acro":
+                    tempstat1="strength";
+                    tempstat2="agility";
+                break;
+                case "alch":    
+                    tempstat1="intelligence";
+                    tempstat2="intelligence";
+                break;
+			}
+            updateTargetNumber(rank,tempstat1,tempstat2);
+		});
+	});
+
+    function updateTargetNumber(rank,stat1,stat2)
+    {
+        getAttrs([rank,stat1,stat2],function(values)
+        {
+            let att1 = parseInt(values[stat1]);
+            let att2 = parseInt(values[stat2]);
+            let higherstat = Math.max(att1,att2);
+            let newnumber = higherstat+parseInt(values[rank]);
+            setAttrs({
+                [rank +'tn']:newnumber
+            });
+		});
+	}
+
 </script>
