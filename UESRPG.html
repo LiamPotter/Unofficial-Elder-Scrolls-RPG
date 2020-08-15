@@ -309,37 +309,37 @@
                 Lucky #s
             </div>
             <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_luck1" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_luck1" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_luck2" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_luck2" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_luck3" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_luck3" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_luck4" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_luck4" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_luck5" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_luck5" class = "sheet-luck-box"value = -1>
             </div>
             <div style = " grid-column: 1 / span 1; vertical-align:bottom;text-align:right;padding-top:8px;padding-right:5px;">
                 Unlucky #s
             </div>
             <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_unluck1" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_unluck1" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_unluck2" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_unluck2" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_unluck3" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_unluck3" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_unluck4" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_unluck4" class = "sheet-luck-box"value = -1>
             </div>
              <div style = " grid-column: 1 / span 1;">
-                <input type="text" name="attr_unluck5" class = "sheet-luck-box"value = ->
+                <input type="text" name="attr_unluck5" class = "sheet-luck-box"value = -1>
             </div>
         </div>
         <div class = 'sheet-active-stat-grid'style='padding-bottom:12px;padding-top:3px'>
@@ -395,6 +395,8 @@
         <button type="action" class="sheet-mid-button" name="act_configuration" >Spells</button>
     </div>
 
+    <input type="hidden" name="attr_luckrolls"/>
+
     <div class = "sheet-skills-grid">
         <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
             Skills
@@ -405,7 +407,11 @@
             <div class = "sheet-skills-grid-base"style = "font-weight:bold;">
             Target
         </div>
-        <div class = "sheet-skills-grid-name">Acrobatics</div>
+        <div class = "sheet-skills-grid-name">
+            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Acrobatics}} {{target=[[@{acrotn}]]}} {{result=[[1d100]]}} @{luckrolls}" 
+            name="roll_AcroCheck">Acrobatics</button>
+            </div>
         <div class = "sheet-skills-grid-rank">
             <select name="attr_acro" class="sheet-skill-rank"> 
                 <option value="-10">Untrained (-10)</option>
@@ -419,7 +425,7 @@
         <div class = "sheet-skills-grid-base">
             <input type="hidden" name="attr_acrotn"/>
             <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            style="width:100%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
             name="attr_foo_tn" value="@{acrotn}" disabled="true" ></div>
         <div class = "sheet-skills-grid-name">Alchemy</div>
         <div class = "sheet-skills-grid-rank">
@@ -437,9 +443,136 @@
             <input type="number" 
             style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
             name="attr_foo_tn" value="@{alchtn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Alteration</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_alte" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_altetn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{altetn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Athletics</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_athl" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_athltn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{athltn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Command</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_coma" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_comatn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{comatn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Commerce</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_come" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_cometn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{cometn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Conjuration</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_conj" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_conjtn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{conjtn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Deceive</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_dece" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_decetn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{decetn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Destruction</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_dest" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_desttn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{desttn}" disabled="true" ></div>
+        <div class = "sheet-skills-grid-name">Enchant</div>
+        <div class = "sheet-skills-grid-rank">
+            <select name="attr_ench" class="sheet-skill-rank"> 
+                <option value="-10">Untrained (-10)</option>
+                <option value="0">Novice (0) (+0)</option>
+                <option value="10">Apprentice (1) (+10)</option>
+                <option value="20">Journeyman(2) (+20)</option>
+                <option value="30">Adept (3) (+30)</option>
+                <option value="40">Expert (4) (+40)</option>
+                <option value="50">Master (5) (+50)</option>
+            </select></div>  
+        <div class = "sheet-skills-grid-base">
+            <input type="hidden" name="attr_enchtn"/>
+            <input type="number" 
+            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+            name="attr_foo_tn" value="@{enchtn}" disabled="true" ></div>
     </div>
 
- 
     <div class='sheet-character'>
    
     </div>
@@ -453,6 +586,72 @@
         <span>Spells go here</span> 
     </div>
 </div>
+
+<rolltemplate class="sheet-rolltemplate-check">
+    <div class = "sheet-rolltemplate-check-container">
+        <div class ="sheet-rolltemplate-check-header">
+            {{#title}}<div class="sheet-rolltemplate-check-title">{{title}}</div>{{/title}}
+            {{#subtitle}}<div class="sheet-rolltemplate-check-subtitle">{{subtitle}}</div>{{/subtitle}}
+        </div>
+        <div class = "sheet-rolltemplate-check-content">
+            {{#allprops() title subtitle luck1 luck2 luck3 luck4 luck5 unluck1 unluck2 unluck3 unluck4 unluck5}}
+                <div class="sheet-rolltemplate-check-key">{{key}}</div>
+                <div class="sheet-rolltemplate-check-value" >{{value}}</div>
+            {{/allprops() title subtitle luck1 luck2 luck3 luck4 luck5 unluck1 unluck2 unluck3 unluck4 unluck5}}
+
+            {{#rollLess() result target}}
+                <div class="sheet-rolltemplate-check-crit">Passed!</div>
+            {{/rollLess() result target}}
+
+            
+            {{#rollGreater() result target}}
+                <div class="sheet-rolltemplate-check-fumble">Failed!</div>
+            {{/rollGreater() result target}}
+
+            {{#rollTotal() luck1 result}}
+                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+            {{/rollTotal() luck1 result}}
+            
+            {{#rollTotal() luck2 result}}
+                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+            {{/rollTotal() luck2 result}}
+            
+            {{#rollTotal() luck3 result}}
+                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+            {{/rollTotal() luck3 result}}
+            
+            {{#rollTotal() luck4 result}}
+                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+            {{/rollTotal() luck4 result}}
+            
+            {{#rollTotal() luck5 result}}
+                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+            {{/rollTotal() luck5 result}}
+
+             {{#rollTotal() unluck1 result}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollTotal() unluck1 result}}
+            
+            {{#rollTotal() unluck2 result}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollTotal() unluck2 result}}
+            
+            {{#rollTotal() unluck3 result}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollTotal() unluck3 result}}
+            
+            {{#rollTotal() unluck4 result}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollTotal() unluck4 result}}
+            
+            {{#rollTotal() unluck5 result}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollTotal() unluck5 result}}
+        </div>
+    </div>
+</rolltemplate>
+
+
 
 <script type="text/worker">
     const buttonlist = ["character","journal","configuration"];
@@ -488,42 +687,112 @@
         });
     });
 
-    const stat=["strength","endurance","agility","intelligence","willpower","perception","personality","luck"];
-    const ranks=["acro","alch"];
-
-    ranks.forEach(function (rank)
+    on("sheet:opened", function(eventInfo)
     {
-        on("change:"+rank, function()
-        {
-            let tempstat1="";
-            let tempstat2="";
-            switch(rank)
-            {
-                case "acro":
-                    tempstat1="strength";
-                    tempstat2="agility";
-                break;
-                case "alch":    
-                    tempstat1="intelligence";
-                    tempstat2="intelligence";
-                break;
-			}
-            updateTargetNumber(rank,tempstat1,tempstat2);
+        setAttrs({
+            luckrolls:"{{luck1=[[@{luck1}]]}} {{luck2=[[@{luck2}]]}} {{luck3=[[@{luck3}]]}} {{luck4=[[@{luck4}]]}} {{luck5=[[@{luck5}]]}} {{unluck1=[[@{unluck1}]]}} {{unluck2=[[@{unluck2}]]}} {{unluck3=[[@{unluck3}]]}} {{unluck4=[[@{unluck4}]]}} {{unluck5=[[@{unluck5}]]}}"
 		});
 	});
 
-    function updateTargetNumber(rank,stat1,stat2)
+    const stats=["strength","endurance","agility","intelligence","willpower","perception","personality","luck"];
+    console.log("before skills");
+    const skills={
+        acro:["strength","agility"],
+        alch:["intelligence"],
+        alte:["willpower"],
+        athl:["strength","endurance"],
+        coma:["strength","intelligence","personality"],
+        come:["intelligence","personality"],
+        conj:["willpower"],
+        dece:["intelligence","personality"],
+        dest:["willpower"],
+        ench:["intelligence"],
+        evad:["agility"],
+        illu:["willpower"],
+        inve:["intelligence","perception"],
+        logi:["intelligence","perception"],
+        lore:["intelligence"],
+        myst:["willpower"],
+        navi:["intelligence","perception"],
+        obse:["perception"],
+        prsu:["strength","personality"],
+        rest:["willpower"],
+        ride:["agility"],
+        stea:["agility","perception"],
+        subt:["agility","intelligence"],
+        surv:["intelligence","perception"]
+	};
+    console.log("before object loop");
+    Object.entries(skills).forEach(function([skill,stat])
     {
-        getAttrs([rank,stat1,stat2],function(values)
+        let changeName='change:'+skill;
+        on(changeName, ()=>
+        {
+            let tempstat1="";
+            let tempstat2="";
+            let tempstat3="";
+            if(stat.length==3)
+            {
+                tempstat1=stat[0];
+                tempstat2=stat[1];
+                tempstat3=stat[2];
+                updateTargetNumber(skill,tempstat1,tempstat2,tempstat3);
+            }
+            if(stat.length==2)
+            {
+                tempstat1=stat[0];
+                tempstat2=stat[1];
+                updateTargetNumber(skill,tempstat1,tempstat2);
+			}
+            if(stat.length==1)
+            {
+                tempstat1=stat[0];
+                updateTargetNumber(skill,tempstat1);
+			}
+            if(stat.length==0)
+            {
+                console.log(skill+" has no stats to use!");
+            }
+		});
+	});
+
+    function updateTargetNumber(skill,stat1,stat2,stat3)
+    {
+        getAttrs([skill,stat1,stat2,stat3],function(values)
+        {
+            let att1 = parseInt(values[stat1]);
+            let att2 = parseInt(values[stat2]);
+            let att3 = parseInt(values[stat3]);
+            let higherstat = Math.max(att1,att2,att3);
+            let newnumber = higherstat+parseInt(values[skill]);
+            setAttrs({
+                [skill +'tn']:newnumber
+            });
+		});
+	};
+    function updateTargetNumber(skill,stat1,stat2)
+    {
+        getAttrs([skill,stat1,stat2],function(values)
         {
             let att1 = parseInt(values[stat1]);
             let att2 = parseInt(values[stat2]);
             let higherstat = Math.max(att1,att2);
-            let newnumber = higherstat+parseInt(values[rank]);
+            let newnumber = higherstat+parseInt(values[skill]);
             setAttrs({
-                [rank +'tn']:newnumber
+                [skill +'tn']:newnumber
             });
 		});
-	}
-
+	};
+    function updateTargetNumber(skill,stat1)
+    {
+        getAttrs([skill,stat1],function(values)
+        {
+            let att1 = parseInt(values[stat1]);
+            let higherstat = att1;
+            let newnumber = higherstat+parseInt(values[skill]);
+            setAttrs({
+                [skill +'tn']:newnumber
+            });
+		});
+	};
 </script>
