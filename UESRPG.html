@@ -1,7 +1,7 @@
-<div class="sheet-row" style = "width:750px;margin-left:5px;margin-top:0px; margin-right:5px; background:white">
+<div class="sheet-row" style = "width:750px;margin-left:5px;margin-top:-20px; margin-right:5px; background:white">
     <table style:"width:750px;">
         <th>
-            <td class="sheet-bottom-border" style="margin-bottom:-55px;height:90px;width:750px;">
+            <td class="sheet-bottom-border" style="margin-bottom:-60px;height:90px;width:750px;">
                 <table>
                     <tr> 
                     <img src="https://raw.githubusercontent.com/LiamPotter/Unofficial-Elder-Scrolls-RPG/master/ESO-LogoBlack.png">
@@ -50,32 +50,40 @@
         </th>
         </table>
     
-    <table style="vertical-align: top; margin-top:10px;margin-left:0px;width:99%;border-collapse:separate;">
+    <table style="vertical-align: top; margin-top:5px;margin-left:0px;width:99%;border-collapse:separate;">
             <tr>
                 <td style=""></td>
-                <td class="sheet-stat-column" style="font-weight: bold;padding-top:2px;border-style: solid solid none solid; border-width: 2px 2px 2px 2px;border-radius: 8px 0px 0px 0px;">
-                    Strength
+                <td class="sheet-stat-column" style="font-weight: bold;padding-top:0px;border-style: solid solid none solid; border-width: 2px 2px 2px 2px;border-radius: 8px 0px 0px 0px;">
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-3px;" 
+                    value="&{template:check} {{title=Strength}} {{target=[[@{strength}+?{Modifier}]]}} @{luckrolls}" name="roll_StrCheck">Strength</button>
                 </td>
-                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid none none none; border-width: 2px 2px 2px 2px;">
-                    Endurance
+                <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid none none none; border-width: 2px 2px 2px 2px;">
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Endurance}} {{target=[[@{endurance}+?{Modifier}]]}} @{luckrolls}" name="roll_EndCheck">Endurance</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid solid none solid; border-width: 2px 2px 2px 2px;">
-                    Agility
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Agility}} {{target=[[@{agility}+?{Modifier}]]}} @{luckrolls}" name="roll_AgiCheck">Agility</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid none none none; border-width: 2px 2px 2px 2px;">
-                    Intelligence
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Intelligence}} {{target=[[@{intelligence}+?{Modifier}]]}} @{luckrolls}" name="roll_IntCheck">Intelligence</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid solid none solid; border-width: 2px 2px 1px 1px;">
-                    Willpower
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Willpower}} {{target=[[@{willpower}+?{Modifier}]]}} @{luckrolls}" name="roll_IntCheck">Willpower</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid none none none; border-width: 2px 2px 2px 2px;">
-                    Perception
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Perception}} {{target=[[@{perception}+?{Modifier}]]}} @{luckrolls}" name="roll_PercCheck">Perception</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid none none solid; border-width: 2px 2px 2px 2px;">
-                    Personality
+                     <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Personality}} {{target=[[@{personality}+?{Modifier}]]}} @{luckrolls}" name="roll_PercCheck">Personality</button>
                 </td>
                 <td class="sheet-stat-column"style="font-weight: bold;padding-top:2px;border-style: solid solid none solid;border-width: 2px 2px 2px 2px;border-radius: 0px 8px 0px 0px;">
-                    Luck
+                    <button class = "sheet-stat-rollbutton" type="roll" style="font-size:10px;height:10px;vertical-align:top;margin-top:-4px;" 
+                    value="&{template:check} {{title=Luck}} {{target=[[@{luck}+?{Modifier}]]}} @{luckrolls}" name="roll_LuckCheck">Luck</button>
                 </td>
             </tr>
             <tr>
@@ -108,7 +116,9 @@
              <tr>
                   <td class="sheet-stat-column-noncase"style="text-align:right;padding-right:5px;background:white;">Favored</td>
                   <td class="sheet-stat-column"style="padding-bottom:2px;border-style: none solid none solid; border-width: 2px 2px 2px 2px;">
-                      <input type="checkbox" class = "sheet-checkbox" name="attr_fav_strength"/>
+                  
+                  <input type="checkbox" class = "sheet-checkbox" name="attr_fav_strength"/>
+  
                   </td>
                    <td class="sheet-stat-column" style ="padding-bottom:2px;">
                       <input type="checkbox" class = "sheet-checkbox" name="attr_fav_endurance"/>
@@ -167,7 +177,7 @@
     <input type="hidden" class="sheet-spmodtoggle" name="attr_spmodtoggle" />
     <input type="hidden" class="sheet-mpmodtoggle" name="attr_mpmodtoggle" />
 
-    <div style = " background:#ebebeb;padding:5px;margin-top:5px;margin-left:5px">
+    <div style = " background:#ebebeb;padding:5px;margin-top:2px;margin-left:5px">
         <table>
             <td style="padding-right:5px;vertical-align:top">
                 <table class = "sheet-consume-stat-box"style="padding-top:5px; width:100%">
@@ -257,16 +267,21 @@
                         <p style = "font-weight:bold;font-size:15px;padding-top:2px;text-align:center;vertical-align:top;">Max</p>
                          <input type="number" class = "sheet-consume-stat-calc" 
                          style="width:100%;background:white;text-align: center;font-size:15px;font-weight:normal;padding-left:20px;"
-                         name="attr_maxmp" value="@{intelligence}*@{mpmod}" disabled="true" >
+                         name="attr_maxmp" value="@{intelligence}*@{mpmod1}+@{mpmod2}" disabled="true" >
                         
                         <div class="sheet-mpmoddiv">
                             <input type="checkbox" name="attr_mpmodtoggle"style="margin-left:-70px;margin-top:-135px;padding:0px;">
-                            <div class="sheet-mpmod"style="margin-top:-20px;">
-                               <span style = "font-size:12px; vertical-align:top">Mod</span>
-                                    <input type="number" class = "sheet-consume-stat-calc" 
-                                    style="font-size:12px;width:48%;margin-top:-5px;font-weight:normal;background:white;text-align:center;
-                                    border-style: none none none none;height:20px; margin-right:15px"
-                                    name="attr_mpmod" value="1" >
+                            <div class="sheet-mpmod"style="margin-top:-20px;display:grid;justify-content:center;gap:0px;width:80px">
+                               <span style = "font-size:10px;margin-left:0px; vertical-align:top;">M x</span>
+                                    <input type="text" class = "sheet-consume-stat-calc" 
+                                    style="font-size:10px;width:18px;margin-top:-5px;font-weight:normal;background:white;text-align:center;
+                                    border-style: solid none solid none;height:20px;"
+                                    name="attr_mpmod1" value="1" >
+                                <span style = "font-size:10px; vertical-align:top">M +</span>
+                                    <input type="text" class = "sheet-consume-stat-calc" 
+                                    style="font-size:10px;width:18px;margin-top:-5px;font-weight:normal;background:white;text-align:center;
+                                    border-style: solid none solid none;height:20px;"
+                                    name="attr_mpmod2" value="1" >
                             </div>
                        </div>
                         
@@ -304,8 +319,8 @@
         </table>
     </div>
     <div class ="sheet-halfhalf">
-        <div class = "sheet-luck-grid"style='padding-bottom:12px;padding-top:3px'>
-            <div style = " grid-column: 1 / span 1;vertical-align:bottom;text-align:right;padding-top:8px;padding-right:5px;">
+        <div class = "sheet-luck-grid"style='margin-bottom:13px;margin-top:3.5px;'>
+            <div style = " grid-column: 1 / span 1;vertical-align:bottom;text-align:center;padding-top:8px;padding-right:5px;">
                 Lucky #s
             </div>
             <div style = " grid-column: 1 / span 1;">
@@ -323,7 +338,7 @@
              <div style = " grid-column: 1 / span 1;">
                 <input type="text" name="attr_luck5" class = "sheet-luck-box"value = -1>
             </div>
-            <div style = " grid-column: 1 / span 1; vertical-align:bottom;text-align:right;padding-top:8px;padding-right:5px;">
+            <div style = " grid-column: 1 / span 1; vertical-align:bottom;text-align:center;padding-top:8px;padding-right:5px;">
                 Unlucky #s
             </div>
             <div style = " grid-column: 1 / span 1;">
@@ -342,7 +357,7 @@
                 <input type="text" name="attr_unluck5" class = "sheet-luck-box"value = -1>
             </div>
         </div>
-        <div class = 'sheet-active-stat-grid'style='padding-bottom:12px;padding-top:3px'>
+        <div class = 'sheet-active-stat-grid'style='padding-bottom:13px;padding-top:3px'>
             <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character' />
             <input type="hidden" class="sheet-speedmodtoggle" name="attr_speedmodtoggle" />
             <input type="hidden" class="sheet-initmodtoggle" name="attr_initmodtoggle" />
@@ -387,199 +402,556 @@
                 <span>AP</span>
             </div></div>
         </div>
-        <div style="border-style:solid none none none;border-width:1px;height:10px;"></div>
+        <div style="border-style:double none none none;border-width:3px;height:5px;"></div>
     </div>
-    <div style="width:700px;padding-left:260px;padding-bottom:-5px;margin-top:-21px;background:clear;">
+    <input type="hidden" name="attr_luckrolls"/>
+
+    <div style="width:700px;padding-left:260px;padding-bottom:-5px;margin-top:-17px;background:clear;">
         <button type="action" class="sheet-mid-button" name="act_character" >Character</button>
         <button type="action" class="sheet-mid-button" name="act_journal" >Combat</button>
         <button type="action" class="sheet-mid-button" name="act_configuration" >Spells</button>
     </div>
-
-    <input type="hidden" name="attr_luckrolls"/>
-
-    <div class = "sheet-skills-grid">
-        <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
-            Skills
-        </div>
-            <div class = "sheet-skills-grid-rank"style = "font-weight:bold;">
-            Rank
-        </div>
-            <div class = "sheet-skills-grid-base"style = "font-weight:bold;">
-            Target
-        </div>
-        <div class = "sheet-skills-grid-name">
-            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
-            "&{template:check} {{title=Acrobatics}} {{target=[[@{acrotn}]]}} {{result=[[1d100]]}} @{luckrolls}" 
-            name="roll_AcroCheck">Acrobatics</button>
+    <input type="hidden" class = "sheet-tabstoggle" name="attr_sheetTab"/>
+    <div class='sheet-character'style="height:600px">
+        <div class = "sheet-skills-grid"style="margin-top:5px;">
+            <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
+                Skills
             </div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_acro" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_acrotn"/>
-            <input type="number" 
-            style="width:100%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{acrotn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Alchemy</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_alch" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_alchtn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{alchtn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Alteration</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_alte" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_altetn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{altetn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Athletics</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_athl" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_athltn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{athltn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Command</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_coma" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_comatn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{comatn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Commerce</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_come" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_cometn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{cometn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Conjuration</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_conj" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_conjtn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{conjtn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Deceive</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_dece" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_decetn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{decetn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Destruction</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_dest" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_desttn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{desttn}" disabled="true" ></div>
-        <div class = "sheet-skills-grid-name">Enchant</div>
-        <div class = "sheet-skills-grid-rank">
-            <select name="attr_ench" class="sheet-skill-rank"> 
-                <option value="-10">Untrained (-10)</option>
-                <option value="0">Novice (0) (+0)</option>
-                <option value="10">Apprentice (1) (+10)</option>
-                <option value="20">Journeyman(2) (+20)</option>
-                <option value="30">Adept (3) (+30)</option>
-                <option value="40">Expert (4) (+40)</option>
-                <option value="50">Master (5) (+50)</option>
-            </select></div>  
-        <div class = "sheet-skills-grid-base">
-            <input type="hidden" name="attr_enchtn"/>
-            <input type="number" 
-            style="width:100%;height:40%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
-            name="attr_foo_tn" value="@{enchtn}" disabled="true" ></div>
-    </div>
-
-    <div class='sheet-character'>
-   
+                <div class = "sheet-skills-grid-rank"style = "font-weight:bold;">
+                Rank
+            </div>
+                <div class = "sheet-skills-grid-base"style = "font-weight:bold;">
+                Target
+            </div>
+            <div class = "sheet-skills-grid-name">
+                <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Acrobatics}} {{target=[[@{acrotn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_AcroCheck">Acrobatics</button>
+                </div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_acro" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_acrotn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{acrotn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Alchemy}} {{target=[[@{alchtn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_AlchCheck">Alchemy</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_alch" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_alchtn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{alchtn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Alteration}} {{target=[[@{altetn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_AlteCheck">Alteration</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_alte" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_altetn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{altetn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Athletics}} {{target=[[@{athltn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_AthlCheck">Athletics</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_athl" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_athltn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{athltn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Command}} {{target=[[@{comatn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_ComaCheck">Command</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_coma" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_comatn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{comatn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Commerce}} {{target=[[@{cometn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_ComeCheck">Commerce</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_come" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_cometn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{cometn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Conjuration}} {{target=[[@{conjtn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_ConjCheck">Conjuration</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_conj" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_conjtn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{conjtn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Deceive}} {{target=[[@{decetn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_DeceCheck">Deceive</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_dece" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_decetn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{decetn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Destruction}} {{target=[[@{desttn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_DestCheck">Destruction</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_dest" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_desttn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{desttn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+                "&{template:check} {{title=Enchant}} {{target=[[@{enchtn}+?{Modifier}]]}} @{luckrolls}" 
+                name="roll_EnchCheck">Enchant</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_ench" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_enchtn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{enchtn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Evade}} {{target=[[@{evadtn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_EvadCheck">Evade</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_evad" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_evadtn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{evadtn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Illusion}} {{target=[[@{illutn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_IlluCheck">Illusion</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_illu" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_illutn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{illutn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Investigate}} {{target=[[@{invetn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_InveCheck">Investigate</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_inve" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_invetn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{invetn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Logic}} {{target=[[@{logitn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_LogiCheck">Logic</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_logi" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_logitn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{logitn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Lore}} {{target=[[@{loretn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_LoreCheck">Lore</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_lore" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_loretn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{loretn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Mysticism}} {{target=[[@{mysttn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_mystCheck">Mysticism</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_myst" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_mysttn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{mysttn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Navigation}} {{target=[[@{navitn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_naviCheck">Navigation</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_navi" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_navitn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{navitn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Observe}} {{target=[[@{obsetn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_obseCheck">Observe</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_obse" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_obsetn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{obsetn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Persuade}} {{target=[[@{prsutn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_prsuCheck">Persuade</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_prsu" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_prsutn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{prsutn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Restoration}} {{target=[[@{resttn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_restCheck">Restoration</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_rest" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_resttn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{resttn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Ride}} {{target=[[@{ridetn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_rideCheck">Ride</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_ride" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_ridetn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{ridetn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Stealth}} {{target=[[@{steatn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_steaCheck">Stealth</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_stea" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_steatn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{steatn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Subterfuge}} {{target=[[@{subttn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_subtCheck">Subterfuge</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_subt" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_subttn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{subttn}" disabled="true" ></div>
+            <div class = "sheet-skills-grid-name"><button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;" value=
+            "&{template:check} {{title=Survival}} {{target=[[@{survtn}+?{Modifier}]]}} @{luckrolls}" 
+            name="roll_survCheck">Survival</button></div>
+            <div class = "sheet-skills-grid-rank">
+                <select name="attr_surv" class="sheet-skill-rank"> 
+                    <option value="-10">Untrained (-10)</option>
+                    <option value="0">Novice (0) (+0)</option>
+                    <option value="10">Apprentice (1) (+10)</option>
+                    <option value="20">Journeyman(2) (+20)</option>
+                    <option value="30">Adept (3) (+30)</option>
+                    <option value="40">Expert (4) (+40)</option>
+                    <option value="50">Master (5) (+50)</option>
+                </select></div>  
+            <div class = "sheet-skills-grid-base">
+                <input type="hidden" name="attr_survtn"/>
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:15px;border-width:0px;"
+                name="attr_foo_tn" value="@{survtn}" disabled="true" ></div>
+        </div>
+        <div class = ".sheet-right-aligned">
+         <div class = "sheet-profs-grid" style="margin:0px;margin-top:5px;margin-bottom:10px;">
+            <div class = "sheet-profs-grid-name"style = "font-weight:bold;text-align:center;grid-column: 1 / span 2;">
+                Professions
+            </div>
+                <div class = "sheet-profs-grid-rank"style = "font-weight:bold;">
+                Rank
+            </div>
+             <div class = "sheet-profs-grid-base"style = "font-weight:bold;">
+                Target
+            </div>
+            <fieldset  class = "repeating_professions" style = "grid-column: 1/span 4">
+                <div class = "sheet-profs-grid" style="margin:0px;margin-bottom:0px;border:0px">
+                <input type="checkbox" class = "sheet-profs-toggle"/>
+                <input type="hidden" name="attr_proftn"/>
+                <div class = "sheet-profs-grid-name"style="background:none;">
+                    <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;position:relative;z-index:2" value=
+                    "&{template:check} {{title=@{profname}}} {{target=[[@{proftn}+?{Modifier|0}]]}} @{luckrolls}" 
+                    name="roll_Check"label="Prof"></button>
+                    <div class = "sheet-profs-show"style = "margin-top:-20px">
+                        <input type="text"  name="attr_profname"value = "New Profession" style="width:100%;text-align:center;border: 0px;background:none;">
+                    </div>
+                </div>
+                <div class = "sheet-profs-grid-rank">
+                    <select name="attr_prof" class="sheet-skill-rank"> 
+                        <option value="-10" selected="selected">Untrained (-10)</option>
+                        <option value="0">Novice (0) (+0)</option>
+                        <option value="10">Apprentice (1) (+10)</option>
+                        <option value="20">Journeyman(2) (+20)</option>
+                        <option value="30">Adept (3) (+30)</option>
+                        <option value="40">Expert (4) (+40)</option>
+                        <option value="50">Master (5) (+50)</option>
+                    </select></div>  
+                <div class = "sheet-profs-grid-base">
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:8px;border-width:0px;"
+                name="attr_foo_tn" value="@{proftn}" disabled="true" ></div>
+                <div class = "sheet-profs-hide" style="">
+                    <div class = "sheet-profs-grid-name"style = "border:0px;grid-column: 1 / span 2; margin-left:10px;">
+                        Characteristic:
+                    </div>
+                    <div class = "sheet-profs-grid-rank"style = "border:0px;grid-column: 3 / span 1;">
+                    <select name="attr_profchar" class="sheet-skill-rank" style="text-align:center"> 
+                        <option value="strength" selected="selected">Strength</option>
+                        <option value="endurance">Endurance</option>
+                        <option value="agility">Agility</option>
+                        <option value="intelligence">Intelligence</option>
+                        <option value="willpower">Willpower</option>
+                        <option value="perception">Perception</option>
+                        <option value="personality">Personality</option>
+                    </select></div>  
+                </div>
+                </div>
+            </fieldset>
+            </div>
+        </div>
+        <div class = "sheet-traits-grid"style="margin-top:0px;">
+            <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
+                Traits
+            </div>            
+            <fieldset  class = "repeating_traits">
+                <div class = "sheet-trait-int-grid">
+                    <input type="checkbox" class = "sheet-traits-toggle"/>
+                    <input type="text" class = "sheet-traits-name" name="attr_traitname" value="Trait Name"/>
+                    <div class = "sheet-traits-hide">
+                        <textarea class = "sheet-traits-desc" name="attr_traitdesc" value="Trait Description"> </textarea>
+                    </div>
+                </div>
+            </fieldset >
+        </div> 
+        <div class = "sheet-traits-grid"style="margin-top:5px;">
+            <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
+                Talents
+            </div>            
+            <fieldset  class = "repeating_talents" >
+                <div class = "sheet-trait-int-grid" >
+                    <input type="checkbox" class = "sheet-traits-toggle"/>
+                    <input type="text" class = "sheet-traits-name" name="attr_talentname" value="Talent Name"/>
+                    <div class = "sheet-traits-hide">
+                        <input type="text" class = "sheet-traits-name" style="font-size:12px;margin-left:5%" name="attr_talentreq" value="Talent Requirements"/>
+                        <textarea class = "sheet-traits-desc" name="attr_talentdesc" value="Talent Description"> </textarea>
+                    </div>
+                </div>
+            </fieldset >
+        </div>
     </div>
    
     <div class='sheet-journal'>
-        <h2>Combat</h2>
-        <span>Combat Stuff Goes here</span> 
+        <div class ="sheet-halfhalf">
+            <div class="sheet-combat-health-grid">
+                <div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class='sheet-config'>
         <h2>Spells</h2>
@@ -594,59 +966,26 @@
             {{#subtitle}}<div class="sheet-rolltemplate-check-subtitle">{{subtitle}}</div>{{/subtitle}}
         </div>
         <div class = "sheet-rolltemplate-check-content">
-            {{#allprops() title subtitle luck1 luck2 luck3 luck4 luck5 unluck1 unluck2 unluck3 unluck4 unluck5}}
+            {{#allprops() title subtitle dos}}
                 <div class="sheet-rolltemplate-check-key">{{key}}</div>
-                <div class="sheet-rolltemplate-check-value" >{{value}}</div>
-            {{/allprops() title subtitle luck1 luck2 luck3 luck4 luck5 unluck1 unluck2 unluck3 unluck4 unluck5}}
+                <div class="sheet-rolltemplate-check-value  " >{{value}}</div>
+            {{/allprops() title subtitle dos}}
 
             {{#rollLess() result target}}
-                <div class="sheet-rolltemplate-check-crit">Passed!</div>
+                <div class="sheet-rolltemplate-check-crit">Passed!</div>               
             {{/rollLess() result target}}
-
             
             {{#rollGreater() result target}}
                 <div class="sheet-rolltemplate-check-fumble">Failed!</div>
             {{/rollGreater() result target}}
 
-            {{#rollTotal() luck1 result}}
+            {{#rollWasCrit() result}}
                 <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
-            {{/rollTotal() luck1 result}}
+            {{/rollWasCrit() result}}
             
-            {{#rollTotal() luck2 result}}
-                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
-            {{/rollTotal() luck2 result}}
-            
-            {{#rollTotal() luck3 result}}
-                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
-            {{/rollTotal() luck3 result}}
-            
-            {{#rollTotal() luck4 result}}
-                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
-            {{/rollTotal() luck4 result}}
-            
-            {{#rollTotal() luck5 result}}
-                <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
-            {{/rollTotal() luck5 result}}
-
-             {{#rollTotal() unluck1 result}}
+            {{#rollWasFumble() result}}
                 <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
-            {{/rollTotal() unluck1 result}}
-            
-            {{#rollTotal() unluck2 result}}
-                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
-            {{/rollTotal() unluck2 result}}
-            
-            {{#rollTotal() unluck3 result}}
-                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
-            {{/rollTotal() unluck3 result}}
-            
-            {{#rollTotal() unluck4 result}}
-                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
-            {{/rollTotal() unluck4 result}}
-            
-            {{#rollTotal() unluck5 result}}
-                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
-            {{/rollTotal() unluck5 result}}
+            {{/rollWasFumble() result}}
         </div>
     </div>
 </rolltemplate>
@@ -656,11 +995,25 @@
 <script type="text/worker">
     const buttonlist = ["character","journal","configuration"];
     buttonlist.forEach(button => {
-        on(`clicked:${button}`, function() {
+        on(`clicked:${button}`, function() {        
             setAttrs({
                 sheetTab: button
             });
         });
+    });
+
+     on("change:repeating_professions:profchar change:repeating_professions:prof change:repeating_professions:profname", function() {
+        getAttrs(["repeating_professions_profchar", "repeating_professions_prof"], function(values) 
+        {
+            getAttrs([values.repeating_professions_profchar], function(secvals) 
+            {
+                let char = parseInt(secvals[values.repeating_professions_profchar]);
+                let newtn = char + parseInt(values.repeating_professions_prof);
+              setAttrs({
+                repeating_professions_proftn:newtn
+              });
+           });
+       });
     });
 
     on("change:initmodselect change:agility change:intelligence change:perception", function(eventInfo)
@@ -690,7 +1043,7 @@
     on("sheet:opened", function(eventInfo)
     {
         setAttrs({
-            luckrolls:"{{luck1=[[@{luck1}]]}} {{luck2=[[@{luck2}]]}} {{luck3=[[@{luck3}]]}} {{luck4=[[@{luck4}]]}} {{luck5=[[@{luck5}]]}} {{unluck1=[[@{unluck1}]]}} {{unluck2=[[@{unluck2}]]}} {{unluck3=[[@{unluck3}]]}} {{unluck4=[[@{unluck4}]]}} {{unluck5=[[@{unluck5}]]}}"
+            luckrolls:"{{result=[[1d100cs@{luck1}cs@{luck2}cs@{luck3}cs@{luck4}cs@{luck5}cf@{unluck1}cf@{unluck2}cf@{unluck3}cf@{unluck4}cf@{unluck5}]]}} "
 		});
 	});
 
@@ -725,38 +1078,51 @@
     console.log("before object loop");
     Object.entries(skills).forEach(function([skill,stat])
     {
-        let changeName='change:'+skill;
-        on(changeName, ()=>
+        let changeSkill='change:'+skill;
+        on(changeSkill, ()=>
         {
-            let tempstat1="";
-            let tempstat2="";
-            let tempstat3="";
-            if(stat.length==3)
+            skillsUpdate(skill,stat);
+		});
+        stat.forEach(function(s)
+        {
+            let changeStat = 'change:'+s;
+            on(changeStat, ()=>
             {
-                tempstat1=stat[0];
-                tempstat2=stat[1];
-                tempstat3=stat[2];
-                updateTargetNumber(skill,tempstat1,tempstat2,tempstat3);
-            }
-            if(stat.length==2)
-            {
-                tempstat1=stat[0];
-                tempstat2=stat[1];
-                updateTargetNumber(skill,tempstat1,tempstat2);
-			}
-            if(stat.length==1)
-            {
-                tempstat1=stat[0];
-                updateTargetNumber(skill,tempstat1);
-			}
-            if(stat.length==0)
-            {
-                console.log(skill+" has no stats to use!");
-            }
+                skillsUpdate(skill,stat);
+		    });
 		});
 	});
 
-    function updateTargetNumber(skill,stat1,stat2,stat3)
+    function skillsUpdate(skill,stat)
+    {
+        console.log("update "+skill +". assigned stats:"+stat.length);
+        let tempstat1="";
+        let tempstat2="";
+        let tempstat3="";
+        switch(stat.length)
+        {
+            case 3:
+                tempstat1=stat[0];
+                tempstat2=stat[1];
+                tempstat3=stat[2];
+                updateTargetNumber3(skill,tempstat1,tempstat2,tempstat3);
+            break;
+            case 2:
+                tempstat1=stat[0];
+                tempstat2=stat[1];
+                updateTargetNumber2(skill,tempstat1,tempstat2);
+            break;
+            case 1:
+                tempstat1=stat[0];
+                updateTargetNumber1(skill,tempstat1);
+            break;
+            case 0:
+                console.log(skill+" has no stats to use!");
+            break;
+		}
+	}
+
+    function updateTargetNumber3(skill,stat1,stat2,stat3)
     {
         getAttrs([skill,stat1,stat2,stat3],function(values)
         {
@@ -770,7 +1136,7 @@
             });
 		});
 	};
-    function updateTargetNumber(skill,stat1,stat2)
+    function updateTargetNumber2(skill,stat1,stat2)
     {
         getAttrs([skill,stat1,stat2],function(values)
         {
@@ -783,7 +1149,7 @@
             });
 		});
 	};
-    function updateTargetNumber(skill,stat1)
+    function updateTargetNumber1(skill,stat1)
     {
         getAttrs([skill,stat1],function(values)
         {
@@ -795,4 +1161,6 @@
             });
 		});
 	};
+   
+
 </script>

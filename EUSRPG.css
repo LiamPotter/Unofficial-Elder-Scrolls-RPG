@@ -80,17 +80,51 @@ img {
     text-transform: uppercase;
 }
 
+.sheet-check-container{
+    font-size:10px;
+    color:black;
+    background:#ebebeb;
+    text-align: center;
+    border-color:white;
+    text-transform: uppercase;
+}
+
+
+
+.sheet-stat-rollbutton
+{
+    font-size:10px;
+    color:black;
+    text-align:center;
+    vertical-align:top;
+    background: none;
+    border: none;
+    border-color:white;
+    text-transform: uppercase;
+    font-weight: bold
+}
+button[type=roll].sheet-stat-rollbutton::before
+{
+    background-image: none;
+    content: "F"; 
+    font-size:0;
+    color: #ebebeb;
+}
+
 .sheet-luck-grid{
     display:grid;
     grid-template-columns:25% 15% 15% 15% 15% 15%;
     border-spacing:0 5px;
     align-content: center;
-    padding:1px;
+    padding:0px;
     background:white;
+    border-width:1px;
+    border-style:solid solid solid solid; 
+    border-radius: 4px 4px 4px 4px;
 }
 
 .sheet-luck-column{
-font-size:10px;
+    font-size:10px;
     color:black;
     text-align: center;
     text-transform: uppercase;
@@ -122,6 +156,7 @@ font-size:10px;
 .sheet-halfhalf{
     display:grid;
     grid-template-columns:49.5% 49.5%;
+    height:85px;
     justify-content:space-between;
     margin-left:5px;
 }
@@ -135,7 +170,7 @@ font-size:10px;
     width:50px;
     height:50px;
     box-sizing:border-box;
-    padding-bottom:10px;
+    padding-bottom: 4px;
 }
 
 .sheet-luck-box{
@@ -144,6 +179,7 @@ font-size:10px;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    align-self: stretch;
     padding-left:5px;
     width:30px;
     margin-bottom:2px;
@@ -232,12 +268,15 @@ font-size:10px;
 {
     float:left;
     display:grid;
-    width:375px;
-    grid-template-columns:45% 40% 15%;
+    width:350px;
+    grid-template-columns:42.5% 42.5% 15%;
     margin-left:10px;
     margin-right:15px;
-    margin-top:5px;
     padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
     background:#ebebeb;
 }
 
@@ -251,6 +290,7 @@ font-size:10px;
 {
     text-align:center;
     vertical-align:bottom;
+    align-content:center;
     border-style:none none solid none;
     border-width:1px;
     border-color:#9c928c;
@@ -283,6 +323,109 @@ font-size:10px;
     grid-column: 3 / span 1;
 }
 
+.sheet-profs-grid
+{
+    float:left;
+    display:grid;
+    width:350px;
+    grid-template-columns:5% 37.5% 42.5% 15%;
+    margin-left:10px;
+    margin-right:15px;
+    padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+
+.sheet-profs-grid-toggle
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+    grid-column: 1 / span 1;
+}
+
+.sheet-profs-grid-name
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+    grid-column: 2 / span 1;
+}
+.sheet-profs-grid-rank
+{
+    text-align:center;
+    vertical-align:bottom;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+    grid-column: 3 / span 1;
+}
+
+.sheet-profs-grid-base
+{
+    text-align:center;
+    vertical-align:bottom;
+    padding-bottom:0px;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+    grid-column: 4 / span 1;
+}
+
+.sheet-profs-toggle
+{ 
+    background:#ebebeb;
+    margin-top:25%;
+    margin-left:10%;
+}
+
+.sheet-profs-hide
+{
+    display:none;
+}
+.sheet-profs-toggle:checked ~ .sheet-profs-hide
+{
+     display:grid;
+     grid-column:1/span 4;
+     grid-template-columns:10% 30% 60%;
+
+}
+
+.sheet-profs-grid-name .sheet-profs-show
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    margin-left:2px;
+    margin-right:2px;
+    background:#ebebeb;
+    position:relative;
+    z-index:1;
+}
+
+.sheet-profs-toggle:checked ~ .sheet-profs-grid-name .sheet-profs-show{
+    position:relative;
+    z-index:10;
+    background:white;
+}
+
 .sheet-skill-rank
 {
     text-align:center;
@@ -296,12 +439,13 @@ font-size:10px;
 }
 .sheet-skill-rollbutton
 {
-    text-align:center;
-    vertical-align:bottom;
+    text-align:top;
+    vertical-align:top;
     background: none;
     border: none;
-    width:81%;
-   
+    width:82.5%;
+    padding:0px;
+    margin:0px;
     font-size:10px;
 }
 button[type=roll].sheet-skill-rollbutton::before
@@ -310,6 +454,140 @@ button[type=roll].sheet-skill-rollbutton::before
     content: "F"; 
     font-size:0;
     color: #ebebeb;
+}
+
+[data-groupname=repeating_talents] > button.btn.repcontrol_add::after {
+    content: "+ Add Talent";
+    background-color:#FFF;
+    margin-left:-30px;
+}
+[data-groupname=repeating_traits] > button.btn.repcontrol_add::after {
+    content: "+ Add Trait";
+    background-color:#FFF;
+    margin-left:-30px;
+}
+
+[data-groupname=repeating_professions] > button.btn.repcontrol_add::after {
+    content: "+ Add Profession";
+    background-color:#FFF;
+    margin-left:-30px;
+}
+
+[data-groupname=repeating_professions] > button.btn.repcontrol_add {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+[data-groupname=repeating_professions] > button.btn.repcontrol_edit {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.sheet-profs-grid >.repcontrol
+{
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 30% 20%;
+    grid-gap: 50%;
+    grid-template-rows: auto;
+    width: 350px;
+}
+
+.charsheet .repcontrol_add,
+.charsheet .repcontrol_add:focus,
+.charsheet .repcontrol_edit{
+    display: block;
+    background: #FFF;
+    color: black;
+    box-shadow:none;
+    border:0px;
+    outline:0px;
+    font-size:0.9em;
+    height:17.5px;
+    margin-top:3px;
+}
+
+.sheet-right-aligned
+{
+    position:absolute;
+    left:422.5px;
+}
+
+.sheet-traits-grid{
+   
+    display:grid;
+    width:350px;
+    margin-top:5px;
+    padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+
+.repeating_traits
+{  
+    vertical-align:bottom;
+    align-content:center;
+    padding-left:15px;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+}
+
+.sheet-trait-int-grid
+{
+    display:grid;
+    padding-left:5px;
+    grid-template-columns:5% 95%;
+}
+
+.sheet-traits-toggle
+{ 
+    background:#ebebeb;
+    grid-column: 1;
+    margin-top:45%;
+}
+
+.sheet-traits-name
+{
+    font-weight:bold;
+    text-align:left;
+    background:#ebebeb;
+    width:90%;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    padding:0px;
+    padding-top:5px;
+    grid-column: 2;
+}
+
+.sheet-traits-desc
+{
+    font-weight:normal;
+    text-align:left;
+    background:#ebebeb;
+    border-style:none none solid none;
+    border-width:1px;
+    padding:0px;
+    margin-left:5%;
+    margin-top:5px;
+    width:95%;
+    height:60px;
+    min-height:20px;
+    resize:vertical;
+}
+.sheet-traits-hide
+{
+    display:none;
+}
+.sheet-traits-toggle:checked ~ .sheet-traits-hide
+{
+    display:block;
+    grid-column: 1 / span 2;
+    width:100%;
 }
 
 .sheet-consume-stat-box
@@ -324,7 +602,7 @@ button[type=roll].sheet-skill-rollbutton::before
     border-radius: 4px 4px 4px 4px;
     background:white;
     width:20%;
-    height:20px;
+    height:15px;
     padding-left:2px;
     padding-right:2px;
    
@@ -334,7 +612,7 @@ button[type=roll].sheet-skill-rollbutton::before
      font-size:10px;
      vertical-align:bottom;
      margin-bottom:0px;
-      margin-top:-5px;
+     margin-top:-5px;
 }
 
 .sheet-consume-stat-calc{
@@ -349,6 +627,16 @@ button[type=roll].sheet-skill-rollbutton::before
     background:#ebebeb;
     border-style:none none none none; 
     margin-top:-10px;
+}
+
+.sheet-combat-health-grid
+{
+    display:grid;
+}
+
+.sheet-combat-location
+{
+
 }
 
 .sheet-mid-button{
@@ -439,7 +727,7 @@ button[type=roll].sheet-skill-rollbutton::before
     text-align: left;
     width:100%;
     background:#FFF;
-    color:blue;
+    color:black;
 }
 
 .sheet-rolltemplate-check-crit
@@ -450,6 +738,7 @@ button[type=roll].sheet-skill-rollbutton::before
      padding-top:5px;
      padding-bottom:5px;
      color:#007a04;
+     background:#f2fff2;
      border-style:double none none none;
      border-color:#007a04;
 }
@@ -461,6 +750,7 @@ button[type=roll].sheet-skill-rollbutton::before
      padding-top:5px;
      padding-bottom:5px;
      color:#7a0000;
+     background:#fff2f2;
      border-style:double none none none;
      border-color:#7a0000;
 }
