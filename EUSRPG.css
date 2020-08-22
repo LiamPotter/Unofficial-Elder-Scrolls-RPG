@@ -634,6 +634,12 @@ button[type=roll].sheet-skill-rollbutton::before
     display:grid;
 }
 
+.sheet-combat-body-image
+{
+    height:900px;
+    width:400px;
+}
+
 .sheet-combat-location
 {
 
