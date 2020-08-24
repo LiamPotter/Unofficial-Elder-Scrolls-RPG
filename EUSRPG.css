@@ -819,7 +819,7 @@ button[type=roll].sheet-skill-rollbutton::before
     display:grid;
     height:auto;
     width:350px;
-    grid-template-columns:5% auto auto auto 12% auto auto;
+    grid-template-columns:5% auto auto auto auto;
     margin-top:10px;
     margin-bottom:10px;
     margin-left:-32px;
