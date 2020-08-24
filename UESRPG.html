@@ -412,7 +412,7 @@
         <button type="action" class="sheet-mid-button" name="act_configuration" >Spells</button>
     </div>
     <input type="hidden" class = "sheet-tabstoggle" name="attr_sheetTab"/>
-    <div class='sheet-character'style="height:600px">
+    <div class='sheet-character'style="height:550px">
         <div class = "sheet-skills-grid"style="margin-top:5px;">
             <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
                 Skills
@@ -946,13 +946,304 @@
     </div>
    
     <div class='sheet-journal'>
-        <div class ="sheet-halfhalf">
-            <div class="sheet-combat-health-grid">
-            <img class = "sheet-combat-body-image" src="https://raw.githubusercontent.com/LiamPotter/Unofficial-Elder-Scrolls-RPG/master/body.png">
-                <div>
+        
+        <div class="sheet-combat-health-grid">
+            <span style="font-weight:bold;text-align:left;margin-left:150px;margin-bottom:-10px">Armor</span>
+            <img class = "sheet-combat-body-image" src="https://raw.githubusercontent.com/LiamPotter/Unofficial-Elder-Scrolls-RPG/master/dragonborn.png">
+               
+            <div class="sheet-combat-location"style="left:150px;top:450px">
+                <div class = "sheet-combat-location-heading">Head (0)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arhead" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_enchead" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typehead" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+            <div class="sheet-combat-location"style="left:150px;top:625px">
+                <div class = "sheet-combat-location-heading">Body (1-5)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arbody" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_encbody" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typebody" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+            <div class="sheet-combat-location"style="left:35px;top:540px">
+                <div class = "sheet-combat-location-heading">Left Arm (9)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arlarm" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_enclarm" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typelarm" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+            <div class="sheet-combat-location"style="left:265px;top:540px">
+                <div class = "sheet-combat-location-heading">Right Arm (8)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arrarm" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_encrarm" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typerarm" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+            <div class="sheet-combat-location"style="left:75px;top:735px">
+                <div class = "sheet-combat-location-heading">Left Leg (7)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arlleg" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_enclleg" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typelleg" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+            <div class="sheet-combat-location"style="left:215px;top:735px">
+                <div class = "sheet-combat-location-heading">Right Leg (6)</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_arrleg" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_encrleg" class="sheet-combat-armor-input" style="font-size:12px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="text" name="attr_typerleg" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
+                </div>
+            </div>
+                <div class="sheet-combat-shield"style="left:120px;top:825px">
+                <div class = "sheet-combat-shield-heading">Shield</div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px">BR:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_shieldbr" class="sheet-combat-shield-input" style="font-size:12px;max-width:40px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">ENC:</span>
+                </div>
+                <div style="padding:0px;">
+                    <input type="number" name="attr_shieldenc" class="sheet-combat-shield-input" style="font-size:12px;max-width:40px;"/>
+                </div>
+                <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Type:</span>
+                </div>
+                <div class = "sheet-combat-shield-input-long" style="padding:0px;">
+                    <input type="text" name="attr_shieldtype" class="sheet-combat-shield-input" style="font-size:12px;max-width:120px;"/>
+                </div>
+                    <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
+                    <span style="font-weight:bold;text-align:right;font-size:12px;">Notes:</span>
+                </div>
+                <div class = "sheet-combat-shield-input-long" style="padding:0px;">
+                    <input type="text" name="attr_shieldnotes" class="sheet-combat-shield-input" style="font-size:12px;max-width:120px;"/>
                 </div>
             </div>
         </div>
+        <div class ="sheet-right-aligned" style="top:425px;left:450px;">
+            <div class = "sheet-combat-prof-grid">
+                <div class = "sheet-profs-grid-name"style = "font-weight:bold;text-align:center;grid-column: 1 / span 2;">
+                    Combat Style
+                </div>
+                <div class = "sheet-profs-grid-rank"style = "font-weight:bold;">
+                    Rank
+                </div>
+                <div class = "sheet-profs-grid-base"style = "font-weight:bold;">
+                    Target
+                </div>
+                <input type="checkbox" class = "sheet-combatstyle-toggle"style="margin-top:40%"/>
+                <input type="hidden" name="attr_combatstn"/>
+                <div class = "sheet-profs-grid-name"style="background:none;padding-top:0px">
+                    <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:25px;width:100%;position:relative;z-index:2;box-shadow:none" value=
+                    "&{template:check} {{title=@{combatsname}}} {{target=[[@{combatstn}+?{Modifier|0}]]}} @{luckrolls}" 
+                    name="roll_Check"label="Prof"></button>
+                    <div class = "sheet-combat-profs-show"style = "margin-top:-26px;padding-top:4px;height:18px;">
+                        <input type="text"  name="attr_combatsname"value = "Combat Style" style="width:95%;text-align:center;border: 0px;background:none;margin-top:-5px;">
+                    </div>
+                </div>
+                <div class = "sheet-profs-grid-rank">
+                    <select name="attr_combats" class="sheet-skill-rank"> 
+                        <option value="-10" selected="selected">Untrained (-10)</option>
+                        <option value="0">Novice (0) (+0)</option>
+                        <option value="10">Apprentice (1) (+10)</option>
+                        <option value="20">Journeyman(2) (+20)</option>
+                        <option value="30">Adept (3) (+30)</option>
+                        <option value="40">Expert (4) (+40)</option>
+                        <option value="50">Master (5) (+50)</option>
+                    </select></div>  
+                <div class = "sheet-profs-grid-base">
+                <input type="number" 
+                style="width:105%;height:100%;background:#ebebeb;text-align:center;vertical-align:bottom; padding:0px;padding-left:8px;border-width:0px;"
+                name="attr_foo_tn" value="@{combatstn}" disabled="true" ></div>
+                <div class = "sheet-combat-prof-hide" style="">
+                    <div class = "sheet-profs-grid-name"style = "border:0px;grid-column: 1/2; margin-left:10px;">
+                        Characteristic:
+                    </div>
+                    <div class = "sheet-profs-grid-rank"style = "border:0px;grid-column: 3 /2;">
+                    <select name="attr_combatschar" class="sheet-skill-rank" style="text-align:center"> 
+                        <option value="strength" selected="selected">Strength</option>
+                        <option value="agility">Agility</option>
+                    </select></div>  
+                </div>
+                <div class ="sheet-combat-prof-notes">
+                    <textarea class = "sheet-combat-prof-notes-area" name="attr_combatsequip">Combat Equipment & Notes</textarea>
+                </div>
+            </div>
+            <div class="sheet-weapons-grid">
+                <div class="sheet-weapons-title" style="font-weight:bold;">
+                    Melee Weapons
+                </div>
+                <div class="sheet-weapons-damage"style="font-weight:bold">
+                    DMG
+                </div>
+                <div class="sheet-weapons-hand"style="font-weight:bold">
+                    Hand
+                </div>
+                <div class="sheet-weapons-reach"style="font-weight:bold">
+                    Reach
+                </div>
+                <div class="sheet-weapons-enc"style="font-weight:bold">
+                    ENC
+                </div>
+                <fieldset class="repeating_meleeweapons">
+                    <div class="sheet-weapons-grid" style = "margin:0px;border-width:0px;">
+                        <input type="checkbox" class = "sheet-mweapon-toggle"style="margin-top:30%"/>   
+                        <div class = "sheet-weapons-name"style="background:none;">
+                            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;position:relative;z-index:2;box-shadow:none" value=
+                            "&{template:check} {{title=@{mweaponname}}} {{target=[[@{proftn}+?{Modifier|0}]]}} @{luckrolls}" 
+                            name="roll_Attack"label="Attack"></button>
+                            <div class = "sheet-weapons-show"style = "margin-top:-20px">
+                                <input type="text"  name="attr_mweaponname"value = "New Weapon" style="width:100%;text-align:center;border: 0px;background:none;">
+                            </div>
+                        </div>
+                        <div class="sheet-weapons-damage">
+                            <select name="attr_mweapondamage" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                <option value="1d0">-</option>
+                                <option value="1d4" selected="selected">1d4</option>
+                                <option value="1d6">1d6</option>
+                                <option value="1d8">1d8</option>
+                                <option value="1d10">1d10</option>
+                                <option value="1d12">1d12</option>
+                            </select>
+                        </div>
+                        <div class="sheet-weapons-hand">
+                            <select name="attr_mweaponhand" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                <option value="1" selected="selected">1H</option>
+                                <option value="1.5">1.5H</option>
+                                <option value="2">2H</option>
+                            </select>
+                        </div>
+                        <div class="sheet-weapons-reach"style="font-weight:bold">
+                             <input type="text"  name="attr_mweaponreach"value = "1m" style="width:100%;text-align:center;border: 0px;background:none;">
+                        </div>
+                        <div class="sheet-weapons-enc"style="font-weight:bold">
+                             <input type="number"  name="attr_mweaponenc"value = "1" style="margin-left:5px;width:100%;text-align:center;border: 0px;background:none;">
+                        </div>
+                        <div class = "sheet-weapons-hide">
+                            <div class="sheet-weapons-grid1" style = "margin:0px;border-width:0px;">
+                                <div></div>
+                                <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    Type:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <select name="attr_mweapondamagetype" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                        <option value="none">None</option>
+                                        <option value="crushing" selected="selected">Crushing</option>
+                                        <option value="splitting">Splitting</option>
+                                        <option value="slashing">Slashing</option>
+                                    </select>
+                                </div>
+                                 <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    DMG Mod:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <input type="number"  name="attr_mweaponmod"value = "0" style="margin-left:5px;width:100%;text-align:center;border: 0px;background:none;">
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    N/P/P:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <select name="attr_mweaponrollamount" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                        <option value="normal" selected="selected">Normal</option>
+                                        <option value="primitive">Primitive</option>
+                                        <option value="proven">Proven</option>
+                                    </select>
+                                </div>
+                                <div class = "sheet-weapons-quality">
+                                    <textarea class = "sheet-combat-prof-notes-area" name="attr_combatsequip" style=" min-height:20px;max-height:20px;">Qualities & Notes...</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>  
+     
     </div>
     <div class='sheet-config'>
         <h2>Spells</h2>
@@ -1016,6 +1307,25 @@
            });
        });
     });
+    on("change:combats change:strength change:agility change:combatschar",function(eventInfo)
+    {
+        getAttrs(["combats","strength","agility","combatschar"],function(values)
+        {
+            let newTN =0;
+            let mod = parseInt(values.combats);
+            if(values.combatschar=="strength")
+            {
+                newTN = parseInt(values.strength)+mod;      
+			}
+            else
+            {
+                newTN = parseInt(values.agility)+mod;
+			}
+            setAttrs({
+               combatstn:newTN,
+            });
+		});
+	});
 
     on("change:initmodselect change:agility change:intelligence change:perception", function(eventInfo)
     {

@@ -466,9 +466,13 @@ button[type=roll].sheet-skill-rollbutton::before
     background-color:#FFF;
     margin-left:-30px;
 }
-
 [data-groupname=repeating_professions] > button.btn.repcontrol_add::after {
     content: "+ Add Profession";
+    background-color:#FFF;
+    margin-left:-30px;
+}
+[data-groupname=repeating_meleeweapons] > button.btn.repcontrol_add::after {
+    content: "+ Add Weapon";
     background-color:#FFF;
     margin-left:-30px;
 }
@@ -482,7 +486,15 @@ button[type=roll].sheet-skill-rollbutton::before
     grid-column: 2;
     grid-row: 1;
 }
+[data-groupname=repeating_meleeweapons] > button.btn.repcontrol_add {
+    grid-column: 1;
+    grid-row: 1;
+}
 
+[data-groupname=repeating_meleeweapons] > button.btn.repcontrol_edit {
+    grid-column: 2;
+    grid-row: 1;
+}
 .sheet-profs-grid >.repcontrol
 {
     grid-column: 1;
@@ -492,6 +504,16 @@ button[type=roll].sheet-skill-rollbutton::before
     grid-template-rows: auto;
     width: 350px;
 }
+
+.sheet-weapons-grid >.repcontrol
+{
+    display: grid;
+    grid-template-columns: 30% 20%;
+    grid-gap: 50%;
+    grid-template-rows: auto;
+    width: 350px;
+}
+
 
 .charsheet .repcontrol_add,
 .charsheet .repcontrol_add:focus,
@@ -636,15 +658,265 @@ button[type=roll].sheet-skill-rollbutton::before
 
 .sheet-combat-body-image
 {
-    height:900px;
-    width:400px;
+    min-height:450px;
+    margin-left:-10px;
+    opacity:0.25;
 }
 
 .sheet-combat-location
 {
-
+    position:absolute;
+    background:rgba(255, 255, 255, 0.8);
+    border-width:1px;
+    border-style:solid;
+    border-radius: 4px;
+    border-color:black;
+    display:grid;
+    grid-template-columns:auto auto;
+    padding:3px;
+    grid-gap:0px;
+}
+.sheet-combat-location-heading
+{
+    grid-column:1/span 2;
+    font-weight:bold;
+    text-align:left;
+    height:15px;
+}
+.sheet-combat-armor-input
+{
+    max-width:40px;
+    max-height:15px;
+    background:rgba(255, 255, 255, 0.1);
+    border-width:0px 0px 1px 0px;
+    border-radius: 0px;
+    padding:0px;
+    padding-top:2px;
+    padding-left:2px;
+    vertical-align:bottom;
+    font-size:12px;
+}
+.sheet-combat-shield
+{
+    position:absolute;
+    background:rgba(255, 255, 255, 0.8);
+    border-width:1px;
+    border-style:solid;
+    border-radius: 4px;
+    border-color:black;
+    display:grid;
+    grid-template-columns:auto auto auto auto;
+    padding:3px;
+    grid-gap:0px;
+}
+.sheet-combat-shield-heading
+{
+    grid-column:1/span 4;
+    font-weight:bold;
+    text-align:left;
+    height:15px;
+}
+.sheet-combat-shield-input
+{
+    max-width:80px;
+    max-height:15px;
+    background:rgba(255, 255, 255, 0.1);
+    border-width:0px 0px 1px 0px;
+    border-radius: 0px;
+    padding:0px;
+    padding-top:2px;
+    padding-left:2px;
+    vertical-align:bottom;
+    font-size:12px;
+}
+.sheet-combat-shield-input-long
+{
+    grid-column:2/span 3;
+   
+}
+.sheet-combat-prof-grid{
+    display:grid;
+    height:auto;
+    width:350px;
+    grid-template-columns:5% 37.5% 42.5% 15%;
+    grid-template-rows:14% 22% auto;
+    margin-top:5px;
+    margin-bottom:10px;
+    margin-left:-32px;
+    padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+.sheet-profs-grid-name .sheet-combat-profs-show
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    margin-left:2px;
+    margin-right:2px;
+    background:#ebebeb;
+    position:relative;
+    z-index:1;
 }
 
+.sheet-combatstyle-toggle:checked ~ .sheet-profs-grid-name .sheet-combat-profs-show{
+    position:relative;
+    z-index:10;
+    background:white;
+}
+
+.sheet-combat-prof-hide
+{
+    display:none;
+}
+.sheet-combatstyle-toggle:checked ~ .sheet-combat-prof-hide
+{
+     display:grid;
+     grid-column:1/4;
+}
+
+.sheet-combat-prof-notes
+{
+    grid-column:1/5
+}
+.sheet-combat-prof-notes-area
+{
+    font-weight:normal;
+    text-align:left;
+    background:#ebebeb;
+    border-style:none none solid none;
+    border-width:1px;
+    padding:0px;
+    margin-left:5%;
+    margin-top:5px;
+    width:95%;
+    height:60px;
+    min-height:55px;
+    max-height:55px;
+    resize:none;
+}
+.sheet-weapons-grid
+{
+    display:grid;
+    height:auto;
+    width:350px;
+    grid-template-columns:5% 40% 15% 15% 15% 10%;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:-32px;
+    padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+.sheet-weapons-grid1
+{
+    display:grid;
+    height:auto;
+    width:350px;
+    grid-template-columns:5% auto auto auto 12% auto auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:-32px;
+    padding:2px;
+    background:#ebebeb;
+}
+.sheet-weapons-title{
+    grid-column:2/3;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-name{
+    text-align: center;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-damage{
+    text-align: center;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-hand{
+    text-align: center;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-reach{
+    text-align: center;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-enc{
+    text-align: center;
+    border-style:none none solid none;
+    border-radius: 0px 0px 0px 0px;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-weapons-quality
+{
+    grid-column:1/8;
+    height:30px;
+}
+.sheet-weapons-grid >.repcontainer
+{
+    grid-column:1/7;
+}
+.sheet-weapons-name .sheet-weapons-show
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    margin-left:2px;
+    margin-right:2px;
+    background:#ebebeb;
+    position:relative;
+    z-index:1;
+}
+
+.sheet-mweapon-toggle:checked ~ .sheet-weapons-name .sheet-weapons-show{
+    position:relative;
+    z-index:10;
+    background:white;
+}
+.sheet-weapons-hide
+{
+    display:none;
+    grid-column:1/7;
+}
+.sheet-mweapon-toggle:checked ~ .sheet-weapons-hide
+{
+    display:block;
+    grid-column:1/7;
+    width:100%;
+}
 .sheet-mid-button{
     width:75px;
     height:15px;
@@ -679,7 +951,7 @@ button[type=roll].sheet-skill-rollbutton::before
 
 .sheet-rolltemplate-check
 {
-    padding-top:5px;
+    padding-top:2px;
     margin-right:37px;
     padding-bottom:2px;
 }
@@ -710,6 +982,7 @@ button[type=roll].sheet-skill-rollbutton::before
     text-align: left;
     color:white;
     font-weight: bold;
+    font-size: 1.1em;
 }
 .sheet-rolltemplate-check-subtitle
 {
@@ -724,6 +997,7 @@ button[type=roll].sheet-skill-rollbutton::before
     padding-bottom:5px;
     padding-top:5px;
     text-align: left;
+    font-size: 1.1em;
     width:100%;
 }
 .sheet-rolltemplate-check-value
@@ -735,7 +1009,11 @@ button[type=roll].sheet-skill-rollbutton::before
     background:#FFF;
     color:black;
 }
-
+.sheet-rolltemplate-check-value .inlinerollresult
+{
+    background:none;
+    border:none;
+}
 .sheet-rolltemplate-check-crit
 {
      grid-column: 1 / span 2;
