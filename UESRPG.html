@@ -1106,6 +1106,7 @@
             </div>
         </div>
         <div class ="sheet-right-aligned" style="top:425px;left:450px;">
+            <input type="hidden" name="attr_d100luck"value="[[1d100cs@{luck1}cs@{luck2}cs@{luck3}cs@{luck4}cs@{luck5}cf@{unluck1}cf@{unluck2}cf@{unluck3}cf@{unluck4}cf@{unluck5}]]"/>
             <div class = "sheet-combat-prof-grid">
                 <div class = "sheet-profs-grid-name"style = "font-weight:bold;text-align:center;grid-column: 1 / span 2;">
                     Combat Style
@@ -1119,7 +1120,7 @@
                 <input type="checkbox" class = "sheet-combatstyle-toggle"style="margin-top:40%"/>
                 <input type="hidden" name="attr_combatstn"/>
                 <div class = "sheet-profs-grid-name"style="background:none;padding-top:0px">
-                    <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:25px;width:100%;position:relative;z-index:2;box-shadow:none" value=
+                    <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:25px;width:100%;position:relative;z-index:2;box-shadow:none;margin-top:-2px" value=
                     "&{template:check} {{title=@{combatsname}}} {{target=[[@{combatstn}+?{Modifier|0}]]}} @{luckrolls}" 
                     name="roll_Check"label="Prof"></button>
                     <div class = "sheet-combat-profs-show"style = "margin-top:-26px;padding-top:4px;height:18px;">
@@ -1172,23 +1173,27 @@
                 </div>
                 <fieldset class="repeating_meleeweapons">
                     <div class="sheet-weapons-grid" style = "margin:0px;border-width:0px;">
+                        <input type="hidden" name="attr_meleeroll"/>
+                        <input type="hidden" name="attr_meleedamageroll"/>
+                        <input type="hidden" name="attr_meleerowID"/>
                         <input type="checkbox" class = "sheet-mweapon-toggle"style="margin-top:30%"/>   
                         <div class = "sheet-weapons-name"style="background:none;">
-                            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;position:relative;z-index:2;box-shadow:none" value=
-                            "&{template:check} {{title=@{mweaponname}}} {{target=[[@{proftn}+?{Modifier|0}]]}} @{luckrolls}" 
+                            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;position:relative;z-index:2;box-shadow:none" 
+                            value="@{meleeroll} {{id=@{meleerowID}}}{{charid=@{character_id}}}" 
                             name="roll_Attack"label="Attack"></button>
                             <div class = "sheet-weapons-show"style = "margin-top:-20px">
                                 <input type="text"  name="attr_mweaponname"value = "New Weapon" style="width:100%;text-align:center;border: 0px;background:none;">
                             </div>
+                            <button type="roll" style="display:none;" value="@{meleedamageroll}" name="roll_Damage"></button>
                         </div>
                         <div class="sheet-weapons-damage">
                             <select name="attr_mweapondamage" class="sheet-skill-rank" style="text-align:center;width:105%"> 
-                                <option value="1d0">-</option>
-                                <option value="1d4" selected="selected">1d4</option>
-                                <option value="1d6">1d6</option>
-                                <option value="1d8">1d8</option>
-                                <option value="1d10">1d10</option>
-                                <option value="1d12">1d12</option>
+                                <option value="d0">-</option>
+                                <option value="d4" selected="selected">1d4</option>
+                                <option value="d6">1d6</option>
+                                <option value="d8">1d8</option>
+                                <option value="d10">1d10</option>
+                                <option value="d12">1d12</option>
                             </select>
                         </div>
                         <div class="sheet-weapons-hand">
@@ -1212,10 +1217,10 @@
                                 </div>
                                 <div class = "sheet-weapons-name"style="background:none;">
                                     <select name="attr_mweapondamagetype" class="sheet-skill-rank" style="text-align:center;width:105%"> 
-                                        <option value="none">None</option>
-                                        <option value="crushing" selected="selected">Crushing</option>
-                                        <option value="splitting">Splitting</option>
-                                        <option value="slashing">Slashing</option>
+                                        <option value="">None</option>
+                                        <option value="Crushing" selected="selected">Crushing</option>
+                                        <option value="Splitting">Splitting</option>
+                                        <option value="Slashing">Slashing</option>
                                     </select>
                                 </div>
                                  <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
@@ -1238,13 +1243,116 @@
                                 </div>
                                 <div class = "sheet-weapons-name"style="background:none;">
                                     <select name="attr_mweaponrollamount" class="sheet-skill-rank" style="text-align:center;width:105%"> 
-                                        <option value="normal" selected="selected">Normal</option>
-                                        <option value="primitive">Primitive</option>
-                                        <option value="proven">Proven</option>
+                                        <option value="0" selected="selected">Normal</option>
+                                        <option value="1">Primitive</option>
+                                        <option value="2">Proven</option>
                                     </select>
                                 </div>
                                 <div class = "sheet-weapons-quality">
-                                    <textarea class = "sheet-combat-prof-notes-area" name="attr_combatsequip" style=" min-height:20px;max-height:20px;">Qualities & Notes...</textarea>
+                                    <textarea class = "sheet-combat-prof-notes-area" name="attr_mweaponquals" style=" min-height:20px;max-height:20px;">Qualities & Notes...</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+              <div class="sheet-weapons-grid">
+                <div class="sheet-weapons-title" style="font-weight:bold;">
+                    Ranged Weapons
+                </div>
+                <div class="sheet-weapons-damage"style="font-weight:bold">
+                    DMG
+                </div>
+                <div class="sheet-weapons-hand"style="font-weight:bold">
+                    Hand
+                </div>
+                <div class="sheet-weapons-reach"style="font-weight:bold">
+                    Ammo
+                </div>
+                <div class="sheet-weapons-enc"style="font-weight:bold">
+                    ENC
+                </div>
+                <fieldset class="repeating_rangedweapons">
+                    <div class="sheet-weapons-grid" style = "margin:0px;border-width:0px;">
+                        <input type="checkbox" class = "sheet-mweapon-toggle"style="margin-top:30%"/>   
+                        <div class = "sheet-weapons-name"style="background:none;">
+                            <button class = "sheet-skill-rollbutton" type="roll" style="font-size:13px;height:15px;position:relative;z-index:2;box-shadow:none" value=
+                            "&{template:check} {{title=@{rweaponname}}} {{attack1=[[@{rweapondamage}]]}} {{attack2=[[@{rweapondamage}]]}} @{luckrolls}" 
+                            name="roll_Attack"label="Attack"></button>
+                            <div class = "sheet-weapons-show"style = "margin-top:-20px">
+                                <input type="text"  name="attr_rweaponname"value = "New Weapon" style="width:100%;text-align:center;border: 0px;background:none;">
+                            </div>
+                        </div>
+                        <div class="sheet-weapons-damage">
+                            <select name="attr_rweapondamage" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                <option value="d0">-</option>
+                                <option value="d4" selected="selected">1d4</option>
+                                <option value="d6">1d6</option>
+                                <option value="d8">1d8</option>
+                                <option value="d10">1d10</option>
+                                <option value="d12">1d12</option>
+                            </select>
+                        </div>
+                        <div class="sheet-weapons-hand">
+                            <select name="attr_rweaponhand" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                <option value="1" selected="selected">1H</option>
+                                <option value="2">2H</option>
+                            </select>
+                        </div>
+                        <div class="sheet-weapons-reach"style="font-weight:bold">
+                             <input type="number"  name="attr_rweaponammo"value = "0" style="width:100%;text-align:center;border: 0px;background:none;margin-left:8px">
+                        </div>
+                        <div class="sheet-weapons-enc"style="font-weight:bold">
+                             <input type="number"  name="attr_rweaponenc"value = "1" style="margin-left:5px;width:100%;text-align:center;border: 0px;background:none;">
+                        </div>
+                        <div class = "sheet-weapons-hide">
+                            <div class="sheet-weapons-grid1" style = "margin:0px;border-width:0px;">
+                                <div></div>
+                                 <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    Range:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <input type="text"  name="attr_rweaponrange"value = "00/000/000" style="width:100%;text-align:center;border: 0px;background:none;">
+                                </div>
+                                 <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    A-DMG:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <input type="number"  name="attr_mweaponmod"value = "0" style="margin-left:5px;width:100%;text-align:center;border: 0px;background:none;">
+                                </div>                      
+                                 <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    T-Mod:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <input type="number"  name="attr_rweapontypemod"value = "0" style="margin-left:5px;width:100%;text-align:center;border: 0px;background:none;">
+                                </div>
+                            </div>
+                            <div class="sheet-weapons-grid2" style = "margin:0px;border-width:0px;">
+                                <div></div>
+                                <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    Type:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <select name="attr_rweapondamagetype" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                        <option value="None">None</option>
+                                        <option value="Crushing" selected="selected">Crushing</option>
+                                        <option value="Splitting">Splitting</option>
+                                        <option value="Slashing">Slashing</option>
+                                    </select>
+                                </div>
+                                
+                                 <div class = "sheet-weapons-name"style="background:none;font-weight:bold;padding-top:4.5px">
+                                    N/P/P:
+                                </div>
+                                <div class = "sheet-weapons-name"style="background:none;">
+                                    <select name="attr_rweaponrollamount" class="sheet-skill-rank" style="text-align:center;width:105%"> 
+                                        <option value="0" selected="selected">Normal</option>
+                                        <option value="1">Primitive</option>
+                                        <option value="2">Proven</option>
+                                    </select>
+                                </div>
+                                <div class = "sheet-weapons-quality">
+                                    <textarea class = "sheet-combat-prof-notes-area" name="attr_rweaponquals" style=" min-height:20px;max-height:20px;">Qualities & Notes...</textarea>
                                 </div>
                             </div>
                         </div>
@@ -1276,6 +1384,9 @@
                 <div class="sheet-rolltemplate-check-crit">Passed!</div>               
             {{/rollLess() result target}}
             
+            {{#rollTotal() result target}}
+                <div class="sheet-rolltemplate-check-crit">Passed!</div>               
+            {{/rollTotal() result target}}
             {{#rollGreater() result target}}
                 <div class="sheet-rolltemplate-check-fumble">Failed!</div>
             {{/rollGreater() result target}}
@@ -1291,6 +1402,72 @@
     </div>
 </rolltemplate>
 
+<rolltemplate class="sheet-rolltemplate-attack">
+     <div class = "sheet-rolltemplate-check-container">
+        <div class ="sheet-rolltemplate-check-header">
+            {{#title}}<div class="sheet-rolltemplate-check-title">{{title}}</div>{{/title}}
+            {{#subtitle}}<div class="sheet-rolltemplate-check-subtitle">{{subtitle}}</div>{{/subtitle}}
+        </div>
+        <div class = "sheet-rolltemplate-attack-content2col">
+           {{#target}}<div class="sheet-rolltemplate-check-key">Target</div>
+            <div class="sheet-rolltemplate-check-value">{{target}}</div>{{/target}}
+            <div class="sheet-rolltemplate-check-key">Result</div>
+            <div class="sheet-rolltemplate-check-value">{{attack}}</div>
+            {{#rollLess() attack target}}
+                <div class="sheet-rolltemplate-check-crit">[Passed!](~{{charid}}|repeating_meleeweapons_{{id}}_Damage)</div>               
+            {{/rollLess() attack target}}
+            
+            {{#rollTotal() attack target}}
+                <div class="sheet-rolltemplate-check-crit">[Passed!](~{{charid}}|repeating_meleeweapons_{{id}}_Damage)</div>     
+            {{/rollTotal() attack target}}
+
+            {{#rollGreater() attack target}}
+                <div class="sheet-rolltemplate-check-fumble">Failed!</div>
+            {{/rollGreater() attack target}}
+
+            {{#rollWasCrit() attack}}
+                <div class="sheet-rolltemplate-check-crit">[Critical Success!](~{{charid}}|repeating_meleeweapons_{{id}}_Damage)</div>
+            {{/rollWasCrit() attack}}
+            
+            {{#rollWasFumble() attack}}
+                <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+            {{/rollWasFumble() attack}}
+              
+        </div>
+     </div>
+</rolltemplate> 
+<rolltemplate class="sheet-rolltemplate-damage">
+     <div class = "sheet-rolltemplate-check-container">
+        <div class ="sheet-rolltemplate-damage-content">
+          
+            <div class ="sheet-rolltemplate-damage-location">
+                {{#rollTotal() location 10}}
+                Head
+                {{/rollTotal() location 10}}
+                {{#rollBetween() location 1 5}}
+                Body
+                {{/rollBetween() location 1 5}}
+                {{#rollTotal() location 6}}
+                Right Leg
+                {{/rollTotal() location 6}}
+                {{#rollTotal() location 7}}
+                Left Leg
+                {{/rollTotal() location 7}}
+                {{#rollTotal() location 8}}
+                Right Arm
+                {{/rollTotal() location 8}}
+                {{#rollTotal() location 9}}
+                Left Arm
+                {{/rollTotal() location 9}}
+            </div>
+
+            {{#damage}}<div class ="sheet-rolltemplate-damage-number">{{damage}}</div>{{/damage}}
+            {{rollGreater() tdam 0}}
+                <div class="sheet-rolltemplate-damage-subnumber">{{type}} ({{tdam}})</div>
+            {{rollGreater() tdam 0}}
+        </div>
+     </div>
+</rolltemplate>
 
 
 <script type="text/worker">
@@ -1314,6 +1491,55 @@
                 repeating_professions_proftn:newtn
               });
            });
+       });
+    });
+    on("change:repeating_meleeweapons:mweaponrollamount change:repeating_meleeweapons:mweaponname change:repeating_meleeweapons change:strength", function(eventInfo) {
+       
+      
+        getAttrs(["repeating_meleeweapons_mweaponrollamount", "repeating_meleeweapons_mweaponname","repeating_meleeweapons_mweapondamagetype","repeating_meleeweapons_mweaponmod",
+        "combatstn","character_id","repeating_meleeweapons_mweapondamage","repeating_meleeweapons_mweapontypemod","strength"], function(values) 
+        {
+            let ids =  eventInfo.sourceAttribute.split("_");
+            let rowID = ids[2];
+            let damType=values.repeating_meleeweapons_mweapondamagetype;
+            let damTypeAdd="";
+            let damMod=values.repeating_meleeweapons_mweapontypemod;
+            let damTypeDesc="";
+            if(damType!="")
+            {
+                if(damType=="Crushing")
+                    damTypeDesc="Deal bonus damage equal to the wielder’s Strength bonus (or X,if another value is given), capped at the AR value of the armour on the hit location or BR of a shield used to block it."
+                else if(damType=="Splitting")
+                    damTypeDesc="Deal bonus damage equal to the wielder’s Strength bonus (or X, if another value is given), but only if the DoS of the attack are higher than the AR value of the hit location."
+                else
+                    damTypeDesc=" Deal extra damage equal to the wielder’s Strength bonus (or X, if another value is given) against unarmored hit locations."
+                damTypeAdd=damType;
+                if(damMod==0)
+                    damMod = Math.floor(parseInt(values.strength)/10);
+            }
+            let npp = parseInt(values.repeating_meleeweapons_mweaponrollamount);
+            let luck = "cs@{luck1}cs@{luck2}cs@{luck3}cs@{luck4}cs@{luck5}cf@{unluck1}cf@{unluck2}cf@{unluck3}cf@{unluck4}cf@{unluck5}]]}}";
+            let roll ="&{template:attack}{{title=@{mweaponname}}}{{subtitle=@{mweapondamagetype}}}{{target=[[@{combatstn}+?{Modifier|0}]]}}{{attack=[[1d100"+luck;          
+            let dmg ="&{template:damage}{{attack=[["+values.repeating_meleeweapons_mweapondamage+"+"+values.repeating_meleeweapons_mweaponmod+"]]}}{{type=@{mweapondamagetype}}}{{tmod=@{mweapontypemod}}}{{tdam=[["+damMod+"]]}}{{location=[[1d10]]}}";
+            switch(npp)
+            {
+                case 0:
+                    dmg ="&{template:damage}{{damage=[[1"+values.repeating_meleeweapons_mweapondamage+"+"+values.repeating_meleeweapons_mweaponmod+"]]}}{{type=@{mweapondamagetype}}}{{tmod=@{mweapontypemod}}}{{tdam=[["+damMod+"]]}}{{location=[[1d10]]}}";
+                break;
+                case 1:
+                    dmg ="&{template:damage}{{damage=[[2"+values.repeating_meleeweapons_mweapondamage+"kl1+"+values.repeating_meleeweapons_mweaponmod+"]]}}{{type=@{mweapondamagetype}}}{{tmod=@{mweapontypemod}}}{{tdam=[["+damMod+"]]}}{{location=[[1d10]]}}";
+                break;
+                case 2:
+                    dmg ="&{template:damage}{{damage=[[2"+values.repeating_meleeweapons_mweapondamage+"kh1+"+values.repeating_meleeweapons_mweaponmod+"]]}}{{type=@{mweapondamagetype}}}{{tmod=@{mweapontypemod}}}{{tdam=[["+damMod+"]]}}{{location=[[1d10]]}}";
+                break;
+			}
+            
+            setAttrs({
+                repeating_meleeweapons_meleeroll:roll,
+                repeating_meleeweapons_meleerowID:rowID,
+                repeating_meleeweapons_meleedamageroll:dmg
+            });
+
        });
     });
     on("change:combats change:strength change:agility change:combatschar",function(eventInfo)

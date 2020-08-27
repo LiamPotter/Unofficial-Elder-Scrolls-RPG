@@ -476,12 +476,16 @@ button[type=roll].sheet-skill-rollbutton::before
     background-color:#FFF;
     margin-left:-30px;
 }
+[data-groupname=repeating_rangedweapons] > button.btn.repcontrol_add::after {
+    content: "+ Add Weapon";
+    background-color:#FFF;
+    margin-left:-30px;
+}
 
 [data-groupname=repeating_professions] > button.btn.repcontrol_add {
     grid-column: 1;
     grid-row: 1;
 }
-
 [data-groupname=repeating_professions] > button.btn.repcontrol_edit {
     grid-column: 2;
     grid-row: 1;
@@ -492,6 +496,14 @@ button[type=roll].sheet-skill-rollbutton::before
 }
 
 [data-groupname=repeating_meleeweapons] > button.btn.repcontrol_edit {
+    grid-column: 2;
+    grid-row: 1;
+}
+[data-groupname=repeating_rangedweapons] > button.btn.repcontrol_add {
+    grid-column: 1;
+    grid-row: 1;
+}
+[data-groupname=repeating_rangedweapons] > button.btn.repcontrol_edit {
     grid-column: 2;
     grid-row: 1;
 }
@@ -739,7 +751,7 @@ button[type=roll].sheet-skill-rollbutton::before
     height:auto;
     width:350px;
     grid-template-columns:5% 37.5% 42.5% 15%;
-    grid-template-rows:14% 22% auto;
+    grid-template-rows:17px 27px auto;
     margin-top:5px;
     margin-bottom:10px;
     margin-left:-32px;
@@ -780,6 +792,12 @@ button[type=roll].sheet-skill-rollbutton::before
 
 .sheet-combat-prof-notes
 {
+    display:none;
+    grid-column:1/5
+}
+.sheet-combatstyle-toggle:checked ~ .sheet-combat-prof-notes
+{
+    display:block;
     grid-column:1/5
 }
 .sheet-combat-prof-notes-area
@@ -815,6 +833,18 @@ button[type=roll].sheet-skill-rollbutton::before
     background:#ebebeb;
 }
 .sheet-weapons-grid1
+{
+    display:grid;
+    height:auto;
+    width:350px;
+    grid-template-columns:5% auto 25% auto auto auto auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:-32px;
+    padding:2px;
+    background:#ebebeb;
+}
+.sheet-weapons-grid2
 {
     display:grid;
     height:auto;
@@ -882,7 +912,7 @@ button[type=roll].sheet-skill-rollbutton::before
 }
 .sheet-weapons-quality
 {
-    grid-column:1/8;
+    grid-column:1/6;
     height:30px;
 }
 .sheet-weapons-grid >.repcontainer
@@ -963,7 +993,7 @@ button[type=roll].sheet-skill-rollbutton::before
 .sheet-rolltemplate-check-header
 {
     text-align: left;
-    background:#242424;
+    background:#222;
     padding: 5px;
 }
 .sheet-rolltemplate-check-content
@@ -987,7 +1017,9 @@ button[type=roll].sheet-skill-rollbutton::before
 .sheet-rolltemplate-check-subtitle
 {
     text-align: left;
+    padding-left:5px;
     color:white;
+    font-style:italic;
 }
 .sheet-rolltemplate-check-key
 {
@@ -1026,6 +1058,14 @@ button[type=roll].sheet-skill-rollbutton::before
      border-style:double none none none;
      border-color:#007a04;
 }
+.sheet-rolltemplate-check-crit a[href^="!"], 
+.sheet-rolltemplate-check-crit a[href^="~"]
+{
+    font-weight: bold;
+    color:#007a04;
+    background:none;
+    display:contents;
+}
 .sheet-rolltemplate-check-fumble
 {
      grid-column: 1 / span 2;
@@ -1041,4 +1081,105 @@ button[type=roll].sheet-skill-rollbutton::before
 .sheet-rolltemplate-check-content :nth-child(4n+3),
 .sheet-rolltemplate-check-content :nth-child(4n) {
   background:#EEE;
+}
+.sheet-rolltemplate-attack
+{
+    padding-top:2px;
+    margin-right:37px;
+    padding-bottom:2px;
+}
+.sheet-rolltemplate-attack-content1col{
+    grid-template-columns: 100%;
+    display: grid;
+    background: #FFF;
+    line-height:1.4em;
+}
+.sheet-rolltemplate-attack-content2col{
+    grid-template-columns: 35% 65%;
+    display: grid;
+    background: #FFF;
+    line-height:1.4em;
+}
+.sheet-rolltemplate-attack-roll
+{
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left:10px;
+    padding-bottom:5px;
+    padding-top:5px;
+    text-align: center;
+    font-size: 1.1em;
+    width:100%;
+}
+.sheet-rolltemplate-attack-content2col :nth-child(4n+3),
+.sheet-rolltemplate-attack-content2col :nth-child(4n) {
+  background:#EEE;
+}
+.sheet-rolltemplate-damage
+{ 
+    width:75%;
+    margin-right:0px;
+    margin-left:5%;
+    padding-bottom:2px;
+}
+.sheet-rolltemplate-damage-content
+{ 
+    display: grid;
+    grid-template-columns: 100%;
+    background: #FFF;
+    line-height:1.3em;
+   
+}
+.sheet-rolltemplate-damage-location
+{ 
+    font-weight: bold;
+    text-align: center;
+    vertical-align:middle;
+    padding:2px;
+    padding-top:3px;
+    padding-bottom:3px;
+    font-size: 1.2em;
+    background:#222;
+    color:white;
+}
+.sheet-rolltemplate-damage-number
+{ 
+    font-weight: bold;
+    text-align: center;
+    vertical-align:middle;
+    padding:2px;
+    padding-top:5px;
+    font-size: 1.2em;
+}
+.sheet-rolltemplate-damage-subnumber
+{ 
+    font-weight: bold;
+    font-style:italic;
+    color:grey;
+    text-align: center;
+    vertical-align:middle;
+    padding-bottom:2px;
+    font-size: 0.9em;
+}
+.sheet-rolltemplate-damage-subnumber .inlinerollresult
+{
+    background:none;
+    border:none;
+    font-size:1em;
+    padding:0px 1px 0px 1px;
+}
+.sheet-rolltemplate-damage-number .inlinerollresult
+{
+    background:none;
+    border:none;
+}
+.sheet-rolltemplate-damage-number .inlinerollresult.fullfail
+{
+    background:none;
+    border:none;
+}
+.sheet-rolltemplate-damage-number .inlinerollresult.fullcrit
+{
+    background:none;
+    border:none;
 }
