@@ -412,8 +412,8 @@
         <button type="action" class="sheet-mid-button" name="act_configuration" >Spells</button>
     </div>
     <input type="hidden" class = "sheet-tabstoggle" name="attr_sheetTab"/>
-    <div class='sheet-character'style="height:550px">
-        <div class = "sheet-skills-grid"style="margin-top:5px;">
+    <div class='sheet-character'>
+        <div class = "sheet-skills-grid"style="margin-top:5px;margin-bottom:80px">
             <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
                 Skills
             </div>
@@ -1035,7 +1035,7 @@
                     <input type="text" name="attr_typerarm" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
                 </div>
             </div>
-            <div class="sheet-combat-location"style="left:75px;top:735px">
+            <div class="sheet-combat-location"style="left:75px;top:715px">
                 <div class = "sheet-combat-location-heading">Left Leg (7)</div>
                 <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
                     <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
@@ -1056,7 +1056,7 @@
                     <input type="text" name="attr_typelleg" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
                 </div>
             </div>
-            <div class="sheet-combat-location"style="left:215px;top:735px">
+            <div class="sheet-combat-location"style="left:215px;top:715px">
                 <div class = "sheet-combat-location-heading">Right Leg (6)</div>
                 <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
                     <span style="font-weight:bold;text-align:right;font-size:12px">AR:</span>
@@ -1077,7 +1077,7 @@
                     <input type="text" name="attr_typerleg" class="sheet-combat-armor-input" style="max-width:70px;font-size:12px;"/>
                 </div>
             </div>
-                <div class="sheet-combat-shield"style="left:120px;top:825px">
+                <div class="sheet-combat-shield"style="left:120px;top:815px">
                 <div class = "sheet-combat-shield-heading">Shield</div>
                 <div style="text-align:right;padding:0px;vertical-align:middle;padding-top:1px;padding-right:2px;">
                     <span style="font-weight:bold;text-align:right;font-size:12px">BR:</span>
@@ -1256,7 +1256,7 @@
                     </div>
                 </fieldset>
             </div>
-              <div class="sheet-weapons-grid">
+            <div class="sheet-weapons-grid">
                 <div class="sheet-weapons-title" style="font-weight:bold;">
                     Ranged Weapons
                 </div>
@@ -1363,12 +1363,184 @@
                     </div>
                 </fieldset>
             </div>
+            <div class = "sheet-traits-grid"style="margin-top:0px;  margin-left:-32px;">
+                <div class = "sheet-skills-grid-name"style = "font-weight:bold;text-align:center;">
+                Wounds & Conditions
+                </div>       
+                <fieldset  class = "repeating_wounds">
+                    <div class = "sheet-trait-int-grid">
+                        <input type="checkbox" class = "sheet-traits-toggle"/>
+                        <input type="text" class = "sheet-traits-name" name="attr_woundname" value="Wound/Condition Location & Name"/>
+                        <div class = "sheet-traits-hide">
+                            <textarea class = "sheet-traits-desc" style="height:40px;" name="attr_wounddesc" value="Description"> </textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
         </div>  
      
     </div>
     <div class='sheet-config'>
-        <h2>Spells</h2>
-        <span>Spells go here</span> 
+        <div class = "sheet-magic-grid">
+            <div></div>
+            <div class = "sheet-magic-title">
+                Spell Name
+            </div>
+            <div class = "sheet-magic-title">
+                School
+            </div>
+             <div class = "sheet-magic-title">
+                Level
+            </div>  
+             <div class = "sheet-magic-title">
+                Power
+            </div>  
+             <div class = "sheet-magic-title">
+                Cost
+            </div>  
+            <div class ="sheet-magic-grid-fullwidth">
+                <fieldset class="repeating_magic">
+                    <div class ="sheet-magic-grid-internal">
+                        <input type="checkbox" class = "sheet-magic-toggle"style="margin-top:30%"/>   
+                        <div class = "sheet-magic-input">
+                            <button class = "sheet-skill-rollbutton" type="roll" style="position:relative;z-index:2;box-shadow:none" 
+                                value="" 
+                                name="roll_Magic"label="Magic"></button>
+                            <div class = "sheet-magic-show"style = "margin-top:-8%">
+                                <input type="text"  name="attr_magicname"value = "New Spell" style="width:100%;height:90%;text-align:center;border: 0px;background:none;">
+                            </div>
+                        </div>
+                        <div class = "sheet-magic-input">
+                            <select name="attr_magicschool" class="sheet-magic-dropdown"> 
+                                <option value="alteration" selected="selected">Alteration</option>
+                                <option value="conjuration">Conjuration</option>
+                                <option value="destruction">Destruction</option>
+                                <option value="illusion">Illusion</option>
+                                <option value="mysticism">Mysticism</option>
+                                <option value="restoration">Restoration</option>
+                            </select>
+                        </div>
+                        <div class = "sheet-magic-input">
+                            <select name="attr_magiclevel" class="sheet-magic-dropdown"> 
+                                <option value="1" selected="selected">Novice (1)</option>
+                                <option value="2">Apprentice (2)</option>
+                                <option value="3">Journeyman (3)</option>
+                                <option value="4">Adept (4)</option>
+                                <option value="5">Expert (5)</option>
+                                <option value="6">Master (6)</option>
+                                <option value="7">Grandmaster (7)</option>
+                            </select>
+                        </div>
+                        <div class = "sheet-magic-input">
+                            <input type="number" name="attr_magicpower"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:18px">
+                        </div>
+                        <div class = "sheet-magic-input">
+                            <input type="number" name="attr_magiccost"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:14px">
+                        </div>
+                        <div class = "sheet-magic-hide">
+                            <div class = "sheet-magic-input">
+                                Upkeep:
+                            </div>
+                             <div class = "sheet-magic-input">
+                                <input type="checkbox" name= "attr_magicupkeep"/>   
+                            </div>
+                             <div class = "sheet-magic-input">
+                                Overload:
+                            </div>
+                             <div class = "sheet-magic-input1">
+                                <select name="attr_magicoverload" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                <option value="0" selected="selected">None</option>
+                                <option value="1">+WpB to BR</option>
+                                <option value="2">+WpB to DMG</option>                            
+                                </select>
+                            </div>
+                            <input type="hidden" name="attr_magicrangesel" class="sheet-magic-range-select"/>
+                            <input type="hidden" name="attr_magicaoesel" class="sheet-magic-aoe-select"/>
+                            <input type="hidden" name="attr_magicguard" class="sheet-magic-guard-select"/>
+                            <div class = "sheet-magic-input1">
+                                <select name="attr_magicrangesel" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                <option value="0" selected="selected">Melee</option>
+                                <option value="1">Ranged</option>
+                                <option value="2">Direct</option>                            
+                                </select>
+                            </div>
+                            <div class="sheet-melee">
+                                 <div class = "sheet-magic-input">
+                                    <input type="text" name="attr_magicrange"value = "1m" class="sheet-magic-number-input"style="width:100%;height: 15px;">
+                                </div>
+                            </div>
+                            <div class="sheet-ranged">
+                                <div class = "sheet-magic-input">
+                                    <input type="text" name="attr_magicrange"value = "100m" class="sheet-magic-number-input"style="width:100%;height: 15px;">
+                                </div>
+                            </div>
+                            <div class="sheet-ranged">
+                                <div class = "sheet-magic-input"style="width:100%;">
+                                    <select name="attr_magicaoesel" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                    <option value="0" selected="selected">Normal</option>
+                                    <option value="1">AoE</option>                
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sheet-aoe">
+                                <div class = "sheet-magic-input"style="width:100%;">
+                                    <select name="attr_magicaoe" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                    <option value="Beam" selected="selected">Beam</option>
+                                    <option value="Sphere">Sphere</option>
+                                    <option value="Cone">Cone</option>  
+                                    <option value="Pulse">Pulse</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sheet-aoe">
+                               <div class = "sheet-magic-input">
+                                    <input type="text" name="attr_magicaoerange"value = "30m" class="sheet-magic-number-input"style="width:100%;height: 15px;">
+                                </div>
+                            </div>
+                            <div class="sheet-direct">
+                                <div class = "sheet-magic-input">
+                                    <input type="text" name="attr_magicrange"value = "30m" class="sheet-magic-number-input"style="width:100%;height: 15px;">
+                                </div>
+                            </div>
+                            <div class = "sheet-magic-inputrow2">
+                                Reaction:
+                            </div>
+                            <div class = "sheet-magic-inputrow2">
+                                <input type="checkbox" name= "attr_magicreaction"/>   
+                            </div>
+                             <div class = "sheet-magic-inputrow2" >
+                            </div>
+                            <div class = "sheet-magic-inputrow2" >
+                                Mage Guard:
+                            </div>
+                            <div class = "sheet-magic-inputrow2">
+                                 <select name="attr_magicguard" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                    <option value="None" selected="selected">None</option>
+                                    <option value="WpB to bonus HP">+WpB to bonus HP</option>
+                                    <option value="WpB to bonus HP (type)">+WpB to bonus HP (type)</option>
+                                    <option value="WpB to AR">+WpB to AR</option>
+                                    <option value="WpB to Magic AR">+WpB to Magic AR</option>               
+                                    <option value="WpB to (type) AR">+WpB to (type) AR</option>
+                                </select>
+                            </div>
+                            <div class ="sheet-magic-guard-type">
+                                <div class = "sheet-magic-inputrow2">
+                                    <select name="attr_magicguardtype" class="sheet-magic-dropdown"style="padding-left:0px"> 
+                                        <option value="Fire" selected="selected">Fire</option>
+                                        <option value="Frost">Frost</option>
+                                        <option value="Shock">Shock</option>
+                                        <option value="Poison">Poison</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class = "sheet-magic-inputrow3">
+                                <textarea class = "sheet-traits-desc" style="height:36px;margin:0px;width:100%;" name="attr_magicdesc" value="Magic Description..."> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -857,6 +857,7 @@ button[type=roll].sheet-skill-rollbutton::before
     background:#ebebeb;
 }
 .sheet-weapons-title{
+    text-align: center;
     grid-column:2/3;
     border-style:none none solid none;
     border-radius: 0px 0px 0px 0px;
@@ -930,7 +931,6 @@ button[type=roll].sheet-skill-rollbutton::before
     position:relative;
     z-index:1;
 }
-
 .sheet-mweapon-toggle:checked ~ .sheet-weapons-name .sheet-weapons-show{
     position:relative;
     z-index:10;
@@ -947,6 +947,183 @@ button[type=roll].sheet-skill-rollbutton::before
     grid-column:1/7;
     width:100%;
 }
+.sheet-wounds-grid
+{
+    display:grid;
+    height:auto;
+    width:350px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:-32px;
+    padding:2px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+.sheet-magic-grid
+{
+    display:grid;
+    width:740px;
+    grid-template-columns:3% 39% 18% 18% 11% 11%;
+    padding:2px;
+    margin-top:5px;
+    border-width:4px;
+    border-style:solid solid solid solid; 
+    border-radius: 8px 8px 8px 8px;
+    border-color:#ebebeb;
+    background:#ebebeb;
+}
+.sheet-magic-grid-internal
+{
+    display:grid;
+    grid-template-columns:3% 39% 18% 18% 11% 12%;
+    border-width:0px;
+    background:#ebebeb;
+    padding-right:9px;
+}
+.sheet-magic-title
+{
+    text-align:center;
+    vertical-align:bottom;
+    font-weight:bold;
+    align-content:center;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#9c928c;
+    margin-left:2px;
+    margin-right:2px;
+}
+.sheet-magic-input
+{
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#ccc;
+    text-align:right;
+}
+.sheet-magic-input1
+{
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#ccc;
+}
+.sheet-magic-inputrow2
+{
+    grid-row:2;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#ccc;
+    text-align:right;
+}
+.sheet-magic-inputrow3
+{
+    grid-column:1/15;
+    grid-row:3;
+    border-width:0px;
+}
+.sheet-magic-dropdown
+{
+    text-align:center;
+    vertical-align:bottom;
+    border-style:none none none none;
+    background:#ebebeb;
+    width:100%;
+    height:100%;
+    padding:0px;
+    margin:0px;
+    padding-left:15px;
+}
+
+.sheet-magic-input select{
+   text-align-last:center;
+}
+.sheet-magic-dropdown option{
+  text-align-last:center;
+}
+.sheet-magic-number-input
+{
+    width:100%;
+    text-align:center;
+    border: 0px;
+    background:none;
+}
+.sheet-magic-number-input1
+{
+    width:100%;
+    text-align:center;
+    border: 0px;
+    background:none;
+}
+.sheet-magic-input .sheet-magic-show
+{
+    text-align:center;
+    vertical-align:bottom;
+    align-content:center;
+    margin-left:2px;
+    margin-right:2px;
+    background:#ebebeb;
+    position:relative;
+    z-index:1;
+}
+.sheet-magic-toggle:checked ~ .sheet-magic-input .sheet-magic-show{
+    position:relative;
+    z-index:10;
+    background:white;
+}
+.sheet-magic-grid-fullwidth
+{
+    grid-column:1/7;
+}
+.sheet-magic-grid-name
+{
+    text-align: center;
+    border-style:none none solid none;
+    border-width:1px;
+    border-color:#ccc;
+}
+.sheet-magic-hide
+{
+    display:none;
+}
+.sheet-magic-toggle:checked ~ .sheet-magic-hide
+{
+     grid-column:2/7;
+     display:grid;
+     grid-template-columns:8% 15px 9% auto auto 80px auto auto 80px;
+}
+.sheet-magic-hide .sheet-melee,
+.sheet-magic-hide .sheet-ranged,
+.sheet-magic-hide .sheet-direct,
+.sheet-magic-hide .sheet-magic-guard-type{
+	display: none;
+}
+.sheet-magic-range-select[value="0"] ~ .sheet-melee,
+.sheet-magic-range-select[value="1"] ~ .sheet-ranged,
+.sheet-magic-range-select[value="2"] ~ .sheet-direct
+{
+    display: inline-flex;   
+}
+.sheet-magic-aoe-select[value="0"] ~ .sheet-aoe
+{
+    display: none;
+}
+.sheet-magic-aoe-select[value="1"] ~ .sheet-aoe
+{
+    display: inline-flex;
+}
+.sheet-magic-range-select[value="0"] ~ .sheet-aoe,
+.sheet-magic-range-select[value="2"] ~ .sheet-aoe
+{
+    display: none;
+}
+.sheet-magic-guard-select[value="WpB to bonus HP (type)"] ~ .sheet-magic-guard-type,
+.sheet-magic-guard-select[value="WpB to (type) AR"] ~ .sheet-magic-guard-type
+{
+    grid-row:2;
+    display: inline-flex;
+}
+
 .sheet-mid-button{
     width:75px;
     height:15px;
