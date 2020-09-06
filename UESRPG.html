@@ -1401,41 +1401,41 @@
             <div class ="sheet-magic-grid-fullwidth">
                 <fieldset class="repeating_magic">
                     <div class ="sheet-magic-grid-internal">
+                        <input type="hidden" name="attr_magicroll"/>
                         <input type="checkbox" class = "sheet-magic-toggle"style="margin-top:30%"/>   
                         <div class = "sheet-magic-input">
                             <button class = "sheet-skill-rollbutton" type="roll" style="position:relative;z-index:2;box-shadow:none" 
-                                value="" 
-                                name="roll_Magic"label="Magic"></button>
+                                value="@{magicroll}" name="roll_Magic"label="Magic"></button>
                             <div class = "sheet-magic-show"style = "margin-top:-8%">
                                 <input type="text"  name="attr_magicname"value = "New Spell" style="width:100%;height:90%;text-align:center;border: 0px;background:none;">
                             </div>
                         </div>
                         <div class = "sheet-magic-input">
                             <select name="attr_magicschool" class="sheet-magic-dropdown"> 
-                                <option value="alteration" selected="selected">Alteration</option>
-                                <option value="conjuration">Conjuration</option>
-                                <option value="destruction">Destruction</option>
-                                <option value="illusion">Illusion</option>
-                                <option value="mysticism">Mysticism</option>
-                                <option value="restoration">Restoration</option>
+                                <option value="Alteration" selected="selected">Alteration</option>
+                                <option value="Conjuration">Conjuration</option>
+                                <option value="Destruction">Destruction</option>
+                                <option value="Illusion">Illusion</option>
+                                <option value="Mysticism">Mysticism</option>
+                                <option value="Restoration">Restoration</option>
                             </select>
                         </div>
                         <div class = "sheet-magic-input">
                             <select name="attr_magiclevel" class="sheet-magic-dropdown"> 
-                                <option value="1" selected="selected">Novice (1)</option>
-                                <option value="2">Apprentice (2)</option>
-                                <option value="3">Journeyman (3)</option>
-                                <option value="4">Adept (4)</option>
-                                <option value="5">Expert (5)</option>
-                                <option value="6">Master (6)</option>
-                                <option value="7">Grandmaster (7)</option>
+                                <option value="Novice (1)" selected="selected">Novice (1)</option>
+                                <option value="Apprentice (2)">Apprentice (2)</option>
+                                <option value="Journeyman (3)">Journeyman (3)</option>
+                                <option value="Adept (4)">Adept (4)</option>
+                                <option value="Expert (5)">Expert (5)</option>
+                                <option value="Master (6)">Master (6)</option>
+                                <option value="Grandmaster (7)">Grandmaster (7)</option>
                             </select>
                         </div>
                         <div class = "sheet-magic-input">
-                            <input type="number" name="attr_magicpower"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:18px">
+                            <input type="text" name="attr_magicpower"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:14px">
                         </div>
                         <div class = "sheet-magic-input">
-                            <input type="number" name="attr_magiccost"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:14px">
+                            <input type="number" name="attr_magiccost"value = "0" class="sheet-magic-number-input"style="width:100%;padding-left:24px">
                         </div>
                         <div class = "sheet-magic-hide">
                             <div class = "sheet-magic-input">
@@ -1449,9 +1449,9 @@
                             </div>
                              <div class = "sheet-magic-input1">
                                 <select name="attr_magicoverload" class="sheet-magic-dropdown"style="padding-left:0px"> 
-                                <option value="0" selected="selected">None</option>
-                                <option value="1">+WpB to BR</option>
-                                <option value="2">+WpB to DMG</option>                            
+                                <option value="None" selected="selected">None</option>
+                                <option value="+WpB to BR">+WpB to BR</option>
+                                <option value="+WpB to DMG">+WpB to DMG</option>                            
                                 </select>
                             </div>
                             <input type="hidden" name="attr_magicrangesel" class="sheet-magic-range-select"/>
@@ -1459,9 +1459,9 @@
                             <input type="hidden" name="attr_magicguard" class="sheet-magic-guard-select"/>
                             <div class = "sheet-magic-input1">
                                 <select name="attr_magicrangesel" class="sheet-magic-dropdown"style="padding-left:0px"> 
-                                <option value="0" selected="selected">Melee</option>
-                                <option value="1">Ranged</option>
-                                <option value="2">Direct</option>                            
+                                <option value="Melee" selected="selected">Melee</option>
+                                <option value="Ranged">Ranged</option>
+                                <option value="Direct">Direct</option>                            
                                 </select>
                             </div>
                             <div class="sheet-melee">
@@ -1516,11 +1516,11 @@
                             <div class = "sheet-magic-inputrow2">
                                  <select name="attr_magicguard" class="sheet-magic-dropdown"style="padding-left:0px"> 
                                     <option value="None" selected="selected">None</option>
-                                    <option value="WpB to bonus HP">+WpB to bonus HP</option>
-                                    <option value="WpB to bonus HP (type)">+WpB to bonus HP (type)</option>
-                                    <option value="WpB to AR">+WpB to AR</option>
-                                    <option value="WpB to Magic AR">+WpB to Magic AR</option>               
-                                    <option value="WpB to (type) AR">+WpB to (type) AR</option>
+                                    <option value="+WpB to bonus HP">+WpB to bonus HP</option>
+                                    <option value="+WpB to bonus HP (type)">+WpB to bonus HP (type)</option>
+                                    <option value="+WpB to AR">+WpB to AR</option>
+                                    <option value="+WpB to Magic AR">+WpB to Magic AR</option>               
+                                    <option value="+WpB to (type) AR">+WpB to (type) AR</option>
                                 </select>
                             </div>
                             <div class ="sheet-magic-guard-type">
@@ -1566,7 +1566,7 @@
             {{#rollGreater() result target}}
                 <div class="sheet-rolltemplate-check-fumble">Failed!</div>
             {{/rollGreater() result target}}
-
+            
             {{#rollWasCrit() result}}
                 <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
             {{/rollWasCrit() result}}
@@ -1661,7 +1661,73 @@
         </div>
      </div>
 </rolltemplate>
+<rolltemplate class="sheet-rolltemplate-spell">
+     <div class = "sheet-rolltemplate-check-container"style="background:#FFF;">
+        <div class ="sheet-rolltemplate-check-header">
+            {{#name}}<div class="sheet-rolltemplate-check-title">{{name}}</div>{{/name}}
+            <div class="sheet-rolltemplate-check-subtitle">
+            {{#school}}{{school}}{{/school}} {{#level}}{{level}}{{/level}}
+            </div>
+        </div>
+        {{#extras}}
+         <div class ="sheet-rolltemplate-spell-value">
+           <span style="font-weight: bold;">{{extras}}</span>
+        </div>
+        {{/extras}}
+        {{#overload}}
+         <div class ="sheet-rolltemplate-spell-value">
+           <span style="font-weight: bold;">Overload: </span>{{overload}}
+        </div>
+        {{/overload}}
+        {{#magicguard}}
+         <div class ="sheet-rolltemplate-spell-value">
+           <span style="font-weight: bold;">Magic Guard: </span>{{magicguard}}
+        </div>
+        {{/magicguard}}
+        <div class ="sheet-rolltemplate-spell-value">
+            <span style="font-weight: bold;">Cost: </span>{{cost}}
+        </div>
+        <div class ="sheet-rolltemplate-spell-value-boxed">
+            <span style="font-weight: bold;">Power: </span>{{power}}
+        </div>
+        <div class ="sheet-rolltemplate-spell-value">
+            <span style="font-weight: bold;">Range: </span>{{range}}
+        </div>
+       
+        {{#aoe}}
+        <div class ="sheet-rolltemplate-spell-value">
+            <span style="font-weight: bold;">AoE: </span>{{aoe}} {{aoerange}}
+        </div>
+        {{/aoe}}
+        <div class ="sheet-rolltemplate-spell-value">
+            <span style="font-weight: bold;">Target: </span>{{target}}
+        </div>
+        <div class ="sheet-rolltemplate-spell-value">
+            <span style="font-weight: bold;">Result: </span>{{result}}
+        </div>
+        <div class ="sheet-rolltemplate-spell-value">
+            {{desc}}
+        </div>
+        {{#rollLess() result target}}
+            <div class="sheet-rolltemplate-check-crit">Passed!</div>               
+        {{/rollLess() result target}}
+            
+        {{#rollTotal() result target}}
+            <div class="sheet-rolltemplate-check-crit">Passed!</div>               
+        {{/rollTotal() result target}}
+        {{#rollGreater() result target}}
+            <div class="sheet-rolltemplate-check-fumble">Failed!</div>
+        {{/rollGreater() result target}}
 
+        {{#rollWasCrit() result}}
+            <div class="sheet-rolltemplate-check-crit">Critical Success!</div>
+        {{/rollWasCrit() result}}
+            
+        {{#rollWasFumble() result}}
+            <div class="sheet-rolltemplate-check-fumble">Critical Failure!</div>
+        {{/rollWasFumble() result}}
+     </div>
+</rolltemplate>
 
 <script type="text/worker">
     const buttonlist = ["character","journal","configuration"];
@@ -1780,6 +1846,111 @@
 
        });
     });
+    on("change:repeating_magic:magicname change:repeating_magic:magicschool change:repeating_magic:magiclevel change:repeating_magic:magicpower change:repeating_magic:magiccost change:repeating_magic:magicupkeep change:repeating_magic:magicoverload change:repeating_magic:magicrangesel change:repeating_magic:magicrange change:repeating_magic:magicaoesel change:repeating_magic:magicaoe change:repeating_magic:magicaoerange change:repeating_magic:magicreaction change:repeating_magic:magicguard change:repeating_magic:magicguardtype change:repeating_magic:magicdesc",function(eventInfo){
+        getAttrs(["repeating_magic_magicname","repeating_magic_magicschool","repeating_magic_magiclevel","repeating_magic_magicpower","repeating_magic_magiccost","repeating_magic_magicupkeep","repeating_magic_magicoverload",
+        "repeating_magic_magicrangesel","repeating_magic_magicrange","repeating_magic_magicaoesel","repeating_magic_magicaoe","repeating_magic_magicaoerange","repeating_magic_magicreaction","repeating_magic_magicguard",
+        "repeating_magic_magicguardtype","repeating_magic_magicdesc"],function(values){
+            let name = "{{name=@{magicname}}}";
+            let desc = "{{desc=@{magicdesc}}}";
+            let school = "{{school=@{magicschool}}}";
+            let level = "{{level=@{magiclevel}}}";
+            let powerText = values.repeating_magic_magicpower;
+            let powerReplace="";
+            if(powerText.search('d')!=-1)
+            {
+                powerReplace="[["+powerText+"]]";
+			}
+            else powerReplace=powerText;
+            console.log(powerReplace);
+            let power = "{{power="+powerReplace+"}}";
+            let cost = "{{cost=@{magiccost}}}";
+            let range = "{{range=@{magicrange}}}"
+     
+            let roll = "&{template:spell}"+name+desc+school+level+power+cost+range;
+            let extras="";
+            if(values.repeating_magic_magicreaction=="on")
+            {
+                extras= "Reaction";        
+			}
+            if(values.repeating_magic_magicupkeep=="on")
+            {
+                if(extras!="")
+                    extras=extras+", Upkeep";
+                else
+                    extras="Upkeep";
+			}
+            if(extras!="")
+            {
+                extras="{{extras="+extras+"}}";
+                roll=roll+extras;
+            }
+            if(values.repeating_magic_magicguard!="None")
+            {
+                let magicguard="{{magicguard="+values.repeating_magic_magicguard+"}}";
+                roll=roll+magicguard;
+
+                if(values.repeating_magic_magicguard=="+WpB to bonus HP (type)")
+                {
+                    let rep=magicguard.replace("type",values.repeating_magic_magicguardtype);
+                    magicguard=rep;
+				}
+                if(values.repeating_magic_magicguard=="+WpB to (type) AR")
+                {
+                    let rep=magicguard.replace("type",values.repeating_magic_magicguardtype);
+                    magicguard=rep;
+				}
+                roll=roll+magicguard;
+			}
+            if(values.repeating_magic_magicoverload!="None")
+            {
+                let overload="{{overload=@{magicoverload}}}";
+                roll=roll+overload;
+			}
+            switch(values.repeating_magic_magicrangesel)
+            {
+                case "Melee":
+                    break;
+                case "Ranged":
+                    if(values.repeating_magic_magicaoesel=="1")
+                    {
+                        let aoe = "{{aoe=@{magicaoe}}}";
+                        let aoeRange="{{aoerange=@{magicaoerange}}}";
+                        roll = roll+aoe+aoeRange;
+					}
+                    break;
+                case "Direct":
+                    break;
+			}
+            let target="[[0]]";
+            switch(values.repeating_magic_magicschool)
+            {
+                case "Alteration":
+                    target = "{{target=[[@{altetn}]]}}";
+                    break;
+                case "Conjuration":
+                    target ="{{target=[[@{conjtn}]]}}";
+                    break;
+                case "Destruction":
+                    target ="{{target=[[@{desttn}]]}}";
+                    break;
+                case "Illusion":
+                    target="{{target=[[@{illutn}]]}}";
+                    break;
+                case "Mysticism":
+                    target="{{target=[[@{mysttn}]]}}";
+                    break;
+                case "Restoration":
+                    target="{{target=[[@{resttn}]]}}";
+                    break;
+			}
+            roll=roll+"{{result=[[1d100cs@{luck1}cs@{luck2}cs@{luck3}cs@{luck4}cs@{luck5}cf@{unluck1}cf@{unluck2}cf@{unluck3}cf@{unluck4}cf@{unluck5}]]}}"
+            roll=roll+target;
+            setAttrs({
+                repeating_magic_magicroll:roll
+            });
+
+        });
+	});
     on("change:combats change:strength change:agility change:combatschar",function(eventInfo)
     {
         getAttrs(["combats","strength","agility","combatschar"],function(values)
